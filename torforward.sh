@@ -16,5 +16,5 @@ echo '--- [snip] ---'
 netstat -laputen | grep LISTEN | grep :$TORSOCKS
 echo '--- [snip] ---'
 
-socat -s TCP4-LISTEN:$LISTEN,bind=127.0.0.1,fork,reuseaddr SOCKS4A:127.0.0.1:$TARGET,socksport=$TORSOCKS,forever,interval=10
+socat -s TCP4-LISTEN:$LISTEN,bind=127.0.0.1,fork,reuseaddr SOCKS4A:127.0.0.1:$TARGET,socksport=$TORSOCKS,interval=10
 
