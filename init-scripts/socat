@@ -35,7 +35,7 @@ do_start ()
     sleep 1
     kill -0 $PID && echo $PID >$PIDFILE
     if [ $? -ne 0 ]; then
-      kill $PID
+      /bin/kill $PID
       log_end_msg 1
       return 1
     fi
