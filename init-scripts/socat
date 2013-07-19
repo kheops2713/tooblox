@@ -26,14 +26,14 @@ do_start ()
   . $config
   if [ "$ENABLE" = "yes" ]; then
     log_daemon_msg "Starting socat service" "$(basename $config)" || true
-    if [ -e $PIDFILE ]; then
+    if [ -e "$PIDFILE" ]; then
       log_end_msg 1
       return 1
     fi
     $SOCAT $LEFT,setuid=$USER,setgid=$GROUP $RIGHT &
     PID=$!
     sleep 1
-    kill -0 $PID && echo $PID >$PIDFILE
+    kill -0 $PID && echo $PID >"$PIDFILE"
     if [ $? -ne 0 ]; then
       /bin/kill $PID
       log_end_msg 1
@@ -50,9 +50,9 @@ do_stop ()
   . $config
   if [ "$ENABLE" = "yes" ]; then
     log_daemon_msg "Stopping socat service" "$(basename $config)" || true
-    if [ -r $PIDFILE ]; then
-      /bin/kill $(/bin/cat $PIDFILE)
-      /bin/rm $PIDFILE
+    if [ -r "$PIDFILE" ]; then
+      /bin/kill $(/bin/cat "$PIDFILE")
+      /bin/rm "$PIDFILE"
     else
       log_end_msg 1
       return 1
