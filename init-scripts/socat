@@ -58,7 +58,6 @@ do_stop ()
       return 1
     fi
   fi
-
   log_end_msg 0
   return 0
 }
