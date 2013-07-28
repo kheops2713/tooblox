@@ -1,0 +1,36 @@
+# Example muttrc for two accounts + PGP management with separate identify for each account
+# Mostly stolen from bits everywhere on the web, with some customization
+
+set charset="utf-8"
+set sort="threads"
+set editor="vim"
+
+folder-hook 'server1.com' 'source ~/.mutt/account1'
+folder-hook 'server2.org' 'source ~/.mutt/account2'
+
+source ~/.mutt/pgp-common
+
+macro index <F4> '<sync-mailbox>'
+macro index <f2> '<enter-command>source ~/.mutt/account1<enter><change-folder>!<enter>'
+macro index <f3> '<enter-command>source ~/.mutt/account2<enter><change-folder>!<enter>'
+# -*-muttrc-*-
+
+# Palette for use with the Linux console.  Black background.
+color hdrdefault blue black
+color quoted blue black
+color signature blue black
+color attachment red black
+color message brightred black
+color error brightred black
+color indicator black red
+color status brightgreen blue
+color tree white black
+color normal white black
+color markers red black
+color search white black
+color tilde brightmagenta black
+color index blue black ~F
+color index red black "~N|~O"
+
+# color body brightwhite black '\*+[^*]+\*+'
+# color body brightwhite black '_+[^_]+_+'
