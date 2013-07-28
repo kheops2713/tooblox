@@ -1,0 +1,10 @@
+Rxvt.foreground: white
+Rxvt.background: black
+URxvt.font: xft:Liberation Mono-11
+Rxvt.loginShell: true
+
+URxvt.perl-ext-common: default,tabbed
+
+URxvt.perl-ext: default,matcher
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.matcher.button: 1
