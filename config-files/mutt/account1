@@ -1,4 +1,6 @@
 # Change with your own settings (email, servers, security)
+
+set realname="Me"
 set from=me@server1.com
 set hostname="server1.com"
 set folder="imaps://imap.server1.com/"
