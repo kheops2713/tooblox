@@ -4,6 +4,7 @@
 set charset="utf-8"
 set sort="threads"
 set editor="vim"
+set use_envelope_from=yes
 
 folder-hook 'server1.com' 'source ~/.mutt/account1'
 folder-hook 'server2.org' 'source ~/.mutt/account2'
