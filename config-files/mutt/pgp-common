@@ -1,6 +1,7 @@
 # Entirely copied from: http://dev.mutt.org/trac/wiki/MuttGuide/UseGPG
 # Lines that are peculiar to choosing an identity are moved to config files
 # peculiar to associated mutt email accounts (those with key ID specified)
+# So, here we have settings that are valid for any email account in mutt.
 
 set pgp_decode_command="gpg %?p?--passphrase-fd 0? --no-verbose --batch --output - %f"
 set pgp_verify_command="gpg --no-verbose --batch --output - --verify %s %f"
