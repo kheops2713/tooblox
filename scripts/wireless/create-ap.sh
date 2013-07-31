@@ -19,6 +19,7 @@
 # - iptables
 # - iproute2 ('ip' command)
 # - sysctl
+# - uuidgen
 
 ## <CONFIG> ##
 
