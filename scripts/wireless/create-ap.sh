@@ -6,10 +6,10 @@
 #
 # Needed info:
 # - wifi interface where to create AP
-# - DHCP server (subnet, netmask)
-# - Base macaddress of AP (optional: will use the physical one if not set)
-# - SSID of the network
-# - wifi channel
+# - Subnet & netmask of LAN to create (the AP will take the first IP in the subnet)
+# - MAC address of AP (optional: will use the physical one if not set)
+# - SSID of the network we create
+# - wifi channel (often in range 1-12)
 # - address of DNS server to announce to the clients
 #
 # Requirements:
