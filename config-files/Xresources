@@ -1,12 +1,21 @@
-# Load this file upon X startup using the 'xrdb' command
-
+! Font 'inconsolata' is part of some package which should be installed
+! Note: it does not display cyrillic very well
 Rxvt.foreground: white
 Rxvt.background: black
 URxvt.font: xft:inconsolata-13
 Rxvt.loginShell: true
 
-URxvt.perl-ext-common: default,tabbed
+! Add tabbing and X clipboard connection (need urxt-perls package on ArchLinux)
+URxvt.perl-ext-common: default,tabbed,clipboard
 
+! To open URLs in Firefox
 URxvt.perl-ext: default,matcher
 URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 1
+
+! Shortcuts for clipboard binding
+! 'M' may actually be Alt
+URxvt.keysym.M-c:   perl:clipboard:copy
+URxvt.keysym.M-v:   perl:clipboard:paste
+URxvt.keysym.M-Control-v: perl:clipboard:paste_escaped
+
