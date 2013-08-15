@@ -62,18 +62,23 @@ do_stop ()
   return 0
 }
 
+RETCODE=0
 for cfg in $CONFIGDIR/*; do
   case "$1" in
     start)
       do_start "$cfg"
+      if [ $? -ne 0 ]; then RETCODE=$?; fi
       ;;
     restart)
       do_stop "$cfg"
+      if [ $? -ne 0 ]; then RETCODE=$?; fi
       sleep 1
       do_start "$cfg"
+      if [ $? -ne 0 ]; then RETCODE=$?; fi
       ;;
     stop)
       do_stop "$cfg"
+      if [ $? -ne 0 ]; then RETCODE=$?; fi
       ;;
     *)
       echo "Usage: socat [start|stop|restart]" >&2
@@ -82,3 +87,4 @@ for cfg in $CONFIGDIR/*; do
   esac
 done
 
+exit $RETCODE
