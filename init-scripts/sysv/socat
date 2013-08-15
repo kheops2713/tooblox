@@ -15,8 +15,8 @@
 SOCAT=/usr/bin/socat
 CONFIGDIR=/etc/socat
 
-# NOTE: these may be Debian (wheezy?) specific!
-# They provide us with fancy display of service start/stop messages
+# NOTE: these may be Debian & Ubuntu specific
+# They notably provide fancy display of service start/stop messages
 . /lib/init/vars.sh
 . /lib/lsb/init-functions
 
