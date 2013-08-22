@@ -1,3 +1,5 @@
+! Load this file at X startup (in xinitrc for example) with: xrdb Xresources
+
 ! Font 'inconsolata' is part of some package which should be installed
 ! Note: it does not display cyrillic very well
 Rxvt.foreground: white
