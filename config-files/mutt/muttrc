@@ -3,6 +3,7 @@
 
 set charset="utf-8"
 set sort="threads"
+set sort_aux="last-date-received"
 set editor="vim"
 set use_envelope_from=yes
 set ssl_force_tls=yes
