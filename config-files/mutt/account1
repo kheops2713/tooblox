@@ -8,8 +8,6 @@ set spoolfile="imaps://me@imap.server1.com/INBOX"
 set smtp_url="smtp://me@smtp.server1.com"
 set ssl_starttls=yes
 
-set header_cache = ~/.cache/mutt/account1_headers
-
 set record="=Sent"
 
 # PGP settings particular to this account - change by your public key ID
