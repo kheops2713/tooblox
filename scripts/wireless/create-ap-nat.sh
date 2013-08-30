@@ -27,6 +27,7 @@ AP_IF=wlan1
 SSID="Free Tunisia"
 CHANNEL=8
 MAC=
+PSK=
 
 SUBNET=192.168.56.0
 NETMASK_BITS=24
@@ -139,6 +140,12 @@ hw_mode=g
 channel=$CHANNEL
 macaddr_acl=0
 ignore_broadcast_ssid=0" >$HOSTAPD_CFG
+
+    if [ -n "$PSK" ]; then
+      echo "wpa=2
+wpa_passphrase=$PSK
+wpa_key_mgmt=WPA-PSK" >>$HOSTAPD_CFG
+    fi
 
     echo Creating $UDHCPD_CFG...
 
