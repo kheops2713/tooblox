@@ -13,6 +13,10 @@ set ssl_force_tls=yes
 set header_cache = ~/.cache/mutt
 set message_cachedir = ~/.cache/mutt
 
+# Tell mutt where the mailcap is, and to automatically start the helper app for text/html.
+set mailcap_path = ~/.mutt/mailcap
+auto_view text/html
+
 folder-hook 'server1.com' 'source ~/.mutt/account1'
 folder-hook 'server2.org' 'source ~/.mutt/account2'
 
