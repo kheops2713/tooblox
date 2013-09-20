@@ -17,6 +17,9 @@ set message_cachedir = ~/.cache/mutt
 set mailcap_path = ~/.mutt/mailcap
 auto_view text/html
 
+# still give priority to plaintext over html in case both contents are present
+alternative_order text/plain text/html
+
 folder-hook 'server1.com' 'source ~/.mutt/account1'
 folder-hook 'server2.org' 'source ~/.mutt/account2'
 
