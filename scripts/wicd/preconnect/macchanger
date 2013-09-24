@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+connection_type="$1"
+
+WL_IF=wlp4s0
+W_IF=enp5s0
+
+if [[ "${connection_type}" == "wireless" ]]; then
+        ip link set $WL_IF down
+        macchanger -a -b $WL_IF
+        ip link set $WL_IF up
+elif [[ "${connection_type}" == "wired" ]]; then
+        ip link set $W_IF down
+        macchanger -a -b $W_IF
+        ip link set $W_IF up
+fi
+
