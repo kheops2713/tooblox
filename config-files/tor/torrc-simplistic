@@ -5,6 +5,10 @@ SocksPort 9050
 DNSPort 127.0.0.1:9053
 DNSPort [::1]:9053
 
+# To have automatic mapping of .onion addresses
+AutomapHostsOnResolve 1
+AutomapHostsSuffixes .onion
+
 # Local listen port for transparent proxying through Tor
 TransPort 9040
 
