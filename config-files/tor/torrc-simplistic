@@ -1,3 +1,12 @@
+# Local SOCKS proxy
 SocksPort 9050
+
+# Local DNS server that resolves requests inside Tor
+DNSPort 127.0.0.1:9053
+DNSPort [::1]:9053
+
+# Local listen port for transparent proxying through Tor
+TransPort 9040
+
 RunAsDaemon 1
 PidFile /home/kheops/.tor/tor.pid
