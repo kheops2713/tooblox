@@ -12,6 +12,7 @@
 # Description:		a Socat startup script
 #			Uses files in /etc/socat/ to decide what commands to start
 #			You need to set the following variables in files in /etc/socat/:
+#			SOCAT_OPTIONS: global options to pass to socat (e.g. -T)
 #			PIDFILE: where to put the PID
 #			LEFT: left part of command line
 #			RIGHT: right part of command line
@@ -39,7 +40,7 @@ do_start ()
       log_end_msg 1
       return 1
     fi
-    $SOCAT $LEFT,setuid=$USER,setgid=$GROUP $RIGHT &
+    $SOCAT $SOCAT_OPTIONS $LEFT,setuid=$USER,setgid=$GROUP $RIGHT &
     PID=$!
     sleep 1
     kill -0 $PID && echo $PID >"$PIDFILE"
