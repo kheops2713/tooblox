@@ -5,6 +5,9 @@ SocksPort 9050
 DNSPort 127.0.0.1:9053
 DNSPort [::1]:9053
 
+# Use IPv6 (tor >= 0.2.4.19)
+ClientUseIPv6 1
+
 # To have automatic mapping of .onion addresses
 AutomapHostsOnResolve 1
 AutomapHostsSuffixes .onion
