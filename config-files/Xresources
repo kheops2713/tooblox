@@ -8,6 +8,9 @@ Rxvt.background: black
 URxvt.font: xft:inconsolata-13
 Rxvt.loginShell: true
 
+! URxvt to identify itself as rxvt, better known terminfo
+URxvt*termName: rxvt
+
 ! Add tabbing and X clipboard connection (need urxt-perls package on ArchLinux)
 URxvt.perl-ext-common: default,tabbed,clipboard
 
