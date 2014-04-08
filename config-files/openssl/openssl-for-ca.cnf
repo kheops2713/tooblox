@@ -196,11 +196,11 @@ subjectKeyIdentifier=hash
 # So we do this instead (pathlen=0 means no child cert can sign other certs).
 basicConstraints = CA:true, pathlen:0
 
-# Key usage: this is typical for a CA certificate. However since it will
-# prevent it being used as an test self-signed certificate it is best
-# left out by default.
-# Note: this is not the default, we don't intend to use a self-signed cert
-# for other things than for signing other certificates.
+# Key usage: this is typical for a CA certificate and will prevent it from
+# being used as a test self-signed certificate.
+# This is not the default and we don't intend to use a self-signed cert
+# for other things than for signing other certificates so we explicitly specify
+# this.
 keyUsage = cRLSign, keyCertSign
 
 # Include email address in subject alt name: another PKIX recommendation
