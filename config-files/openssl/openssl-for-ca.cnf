@@ -140,7 +140,7 @@ unstructuredName		= Some random shit
 basicConstraints=CA:FALSE
 
 # See RFC3280 and http://citrixblogger.org/2010/09/10/certificate-public-key-usage/
-keyUsage = digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment,keyAgreement
+keyUsage = digitalSignature,keyEncipherment,dataEncipherment,keyAgreement
 
 # Extended usage of newly signed certificate (optional - see doc)
 extendedKeyUsage = critical,serverAuth
