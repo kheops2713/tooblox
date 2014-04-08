@@ -1,0 +1,32 @@
+# This example configuration file is only applicable when creating a certificate
+# request.
+# Specifically, it is an example that shows how to use the X509 "subectAltName"
+# extension in order to have a certificate valid for several names and/or IP
+# addresses.
+#
+# Copied from http://www.xinotes.net/notes/note/1094/
+
+[req]
+distinguished_name = req_distinguished_name
+req_extensions = v3_req
+
+[req_distinguished_name]
+countryName = Country Name (2 letter code)
+countryName_default = US
+localityName = Locality Name (eg, city)
+organizationalUnitName = Organizational Unit Name (eg, section)
+commonName = Common Name (eg, YOUR name)
+commonName_max = 64
+emailAddress = Email Address
+emailAddress_max = 40
+
+[v3_req] 
+keyUsage = keyEncipherment, dataEncipherment
+extendedKeyUsage = serverAuth
+subjectAltName = @alt_names
+
+[alt_names]
+DNS.1   = www.foo.com
+DNS.2   = www.bar.org
+IP.1    = 192.168.1.1
+IP.2    = 192.168.69.144
