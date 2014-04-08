@@ -9,6 +9,7 @@
 [req]
 distinguished_name = req_distinguished_name
 req_extensions = v3_req
+default_bits = 4096
 
 [req_distinguished_name]
 countryName = Country Name (2 letter code)
