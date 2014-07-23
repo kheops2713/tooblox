@@ -1,0 +1,5 @@
+/usr/bin/setxkbmap fr
+xrdb ~/.Xresources
+urxvt &
+redshift &
+exec openbox
