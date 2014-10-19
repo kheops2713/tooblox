@@ -37,7 +37,7 @@ macro index <f3> '<enter-command>source ~/.mutt/account2<enter><change-folder>!<
 
 # Palette for use with the Linux console.  Black background.
 color hdrdefault blue black
-color quoted blue black
+color quoted green black
 color signature blue black
 color attachment red black
 color message brightred black
