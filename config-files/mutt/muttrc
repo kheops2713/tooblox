@@ -12,6 +12,7 @@ set ssl_use_sslv3=no
 set certificate_file=~/.mutt/certificates
 set index_format="%4C %Z %{%b %d %Y} %-15.15L (%4l) %s %> %M"
 set collapse_unread=no
+set strict_threads=yes
 
 # Note: you need to create the directory by hand for this to work.
 # Mutt will create different subdirs for each account, so we just need to set these generally.
