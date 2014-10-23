@@ -37,22 +37,28 @@ macro index <f2> '<enter-command>source ~/.mutt/account1<enter><change-folder>!<
 macro index <f3> '<enter-command>source ~/.mutt/account2<enter><change-folder>!<enter>'
 # -*-muttrc-*-
 
+# Use our customized version of the "solarized" mutt palette
+# Pulled from https://github.com/altercation/mutt-colors-solarized/ and modified
+# Note: it seems mutt must be compiled with slang rather than ncurses for this to work
+
+source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+
 # Palette for use with the Linux console.  Black background.
-color hdrdefault blue black
-color quoted green black
-color signature blue black
-color attachment red black
-color message brightred black
-color error brightred black
-color indicator black red
-color status brightgreen blue
-color tree white black
-color normal white black
-color markers red black
-color search white black
-color tilde brightmagenta black
-color index blue black ~F
-color index red black "~N|~O"
+#color hdrdefault blue black
+#color quoted green black
+#color signature blue black
+#color attachment red black
+#color message brightred black
+#color error brightred black
+#color indicator black red
+#color status brightgreen blue
+#color tree white black
+#color normal white black
+#color markers red black
+#color search white black
+#color tilde brightmagenta black
+#color index blue black ~F
+#color index red black "~N|~O"
 
 # color body brightwhite black '\*+[^*]+\*+'
 # color body brightwhite black '_+[^_]+_+'
