@@ -1,0 +1,5 @@
+filetype plugin on
+syntax on
+set tw=80
+set autoindent
+
