@@ -1,8 +1,5 @@
-! Load this file at X startup (in xinitrc for example) with: xrdb Xresources
-
-! Font 'inconsolata' is often part of some package which should be installed
-! (on archlinux: ttf-inconsolata)
-! Note: it does not display cyrillic well
+! Font 'inconsolata' is part of some package which should be installed
+! Note: it does not display cyrillic very well
 Rxvt.foreground: white
 Rxvt.background: black
 URxvt.font: xft:inconsolata-13
@@ -24,4 +21,10 @@ URxvt.matcher.button: 1
 URxvt.keysym.M-c:   perl:clipboard:copy
 URxvt.keysym.M-v:   perl:clipboard:paste
 URxvt.keysym.M-Control-v: perl:clipboard:paste_escaped
+
+! Some other graphical config
+URxvt*scrollBar: false
+URxvt*depth: 32
+URxvt*secondaryScreen: 1
+URxvt*secondaryScroll: 0
 
