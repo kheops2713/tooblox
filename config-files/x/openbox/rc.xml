@@ -301,6 +301,12 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-bind.sh</command>
     </action>
   </keybind>
+  <keybind key="W-l">
+    <action name="Execute">
+      <command>/usr/bin/slock</command>
+    </action>
+  </keybind>
+
 </keyboard>
 
 <mouse>
