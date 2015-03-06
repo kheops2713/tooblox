@@ -306,7 +306,11 @@
       <command>/usr/bin/slock</command>
     </action>
   </keybind>
-
+  <keybind key="W-w">
+    <action name="Execute">
+      <command>/usr/bin/wicd-gtk</command>
+    </action>
+  </keybind>
 </keyboard>
 
 <mouse>
