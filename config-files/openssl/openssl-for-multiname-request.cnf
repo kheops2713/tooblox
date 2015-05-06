@@ -10,7 +10,7 @@
 distinguished_name = req_distinguished_name
 req_extensions = v3_req
 default_bits = 4096
-default_md = sha256
+default_md = sha512
 
 [req_distinguished_name]
 countryName = Country Name (2 letter code)
