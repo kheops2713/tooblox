@@ -1,5 +1,5 @@
 # Local SOCKS proxy
-SocksPort 9050
+SocksPort 9050 IPv6Traffic PreferIPv6
 
 # Local DNS server that resolves requests inside Tor
 DNSPort 127.0.0.1:9053
