@@ -1,0 +1,9 @@
+# Pass all outgoing connections to a local (Tor) SOCKS5 proxy
+# This requires 'connect-proxy' package
+# See https://bitbucket.org/gotoh/connect
+# See also connectrc in this repo
+Host *
+CheckHostIP no
+Compression yes
+Protocol 2
+ProxyCommand connect -5 -S localhost:9050 %h %p

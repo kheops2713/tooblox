@@ -1,0 +1,5 @@
+# Install as ~/.connectrc or /etc/connectrc
+
+# This just disables prompt for a SOCKS5 auth password (use case: local Tor
+# SOCKS5 proxy)
+SOCKS5_AUTH = none
