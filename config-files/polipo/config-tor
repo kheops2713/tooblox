@@ -1,0 +1,6 @@
+# Simple polipo config to forward requests to the local SOCKS5 proxy of Tor on
+# port 9050
+allowedClients = 127.0.0.1
+socksParentProxy = "localhost:9050"
+socksProxyType = socks5
+diskCacheRoot = ""
