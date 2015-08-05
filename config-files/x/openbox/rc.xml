@@ -316,6 +316,16 @@
       <command>/usr/bin/wicd-gtk</command>
     </action>
   </keybind>
+  <keybind key="W-p">
+    <action name="Execute">
+      <command>/usr/bin/systemctl poweroff</command>
+    </action>
+  </keybind>
+  <keybind key="W-r">
+    <action name="Execute">
+      <command>/usr/bin/systemctl reboot</command>
+    </action>
+  </keybind>
 </keyboard>
 
 <mouse>
