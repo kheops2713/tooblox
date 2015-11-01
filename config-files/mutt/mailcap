@@ -1,5 +1,5 @@
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 application/pdf; evince %s;
-image/*; gthumb %s; edit=gimp %s;
+image/*; sxiv %s; edit=gimp %s;
 application/ms-tnef; tnef -w %s;
 
