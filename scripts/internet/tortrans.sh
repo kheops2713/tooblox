@@ -7,16 +7,16 @@ TORTRANSPORT=9051
 TORDNSPORT=9053
 TORUSER=tor
 
-iptables -A OUTPUT \
+iptables -t nat -A OUTPUT \
    -m owner --uid-owner $TORUSER \
    -p tcp --syn \
    -j REDIRECT --to-ports $TORTRANSPORT
 
-iptables -A OUTPUT \
+iptables -t nat -A OUTPUT \
    -m owner --uid-owner $TORUSER \
    -p udp --dport 53 \
    -j REDIRECT --to-ports $TORDNSPORT
 
-iptables -A OUTPUT \
+iptables -t nat -A OUTPUT \
    -m owner --uid-owner $TORUSER \
    -j REJECT
