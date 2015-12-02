@@ -17,6 +17,6 @@ iptables -t nat -A OUTPUT \
    -p udp --dport 53 \
    -j REDIRECT --to-ports $TORDNSPORT
 
-iptables -t nat -A OUTPUT \
+iptables -A OUTPUT \
    -m owner --uid-owner $TORUSER \
    -j REJECT
