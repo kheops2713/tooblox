@@ -18,6 +18,17 @@ iptables -t nat -A OUTPUT \
    ! -d 127.0.0.1 \
    -j REDIRECT --to-ports $TORDNSPORT
 
+ip6tables -t nat -A OUTPUT \
+   -m owner --uid-owner $TORUSER \
+   -p tcp --syn \
+   -j REDIRECT --to-ports $TORTRANSPORT
+
+ip6tables -t nat -A OUTPUT \
+   -m owner --uid-owner $TORUSER \
+   -p udp --dport 53 \
+   ! -d ::1 \
+   -j REDIRECT --to-ports $TORDNSPORT
+
 #iptables -A OUTPUT \
 #   -m owner --uid-owner $TORUSER \
 #   -j REJECT
