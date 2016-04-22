@@ -33,3 +33,4 @@ DNS.1   = www.foo.com
 DNS.2   = www.bar.org
 IP.1    = 192.168.1.1
 IP.2    = 192.168.69.144
+IP.3	= ::1
