@@ -5,6 +5,9 @@
 # addresses.
 #
 # Copied from http://www.xinotes.net/notes/note/1094/
+#
+# You would typically use the following command with this config file:
+# openssl req -new -config openssl-for-multiname-request.cnf -out csr.pem -keyout key.pem
 
 [req]
 distinguished_name = req_distinguished_name
