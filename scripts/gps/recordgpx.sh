@@ -15,7 +15,7 @@ fi
 cd "$DIR" || exit 1
 
 while [ 1 ]; do
-    FILE=track_$(date +%s).gpx
+    FILE=track_$(date +%Y-%m-%d:%H:%M:%S).gpx
     starttime=$(date +%s)
     echo Record start
     gpxlogger -i 7 -m 5 -e sockets localhost >$FILE
