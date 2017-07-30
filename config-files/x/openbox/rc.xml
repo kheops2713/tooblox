@@ -326,6 +326,31 @@
       <command>/usr/bin/systemctl reboot</command>
     </action>
   </keybind>
+  <keybind key="XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>/usr/bin/xbacklight -inc 5 -time 0 -steps 1</command>
+    </action>
+  </keybind>
+  <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>/usr/bin/xbacklight -dec 5 -time 0 -steps 1</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioRaiseVolume">
+    <action name="Execute">
+      <command>/usr/bin/amixer set Master 5%+</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioLowerVolume">
+    <action name="Execute">
+      <command>/usr/bin/amixer set Master 5%-</command>
+    </action>
+  </keybind>
+  <keybind key="XF86AudioMute">
+    <action name="Execute">
+      <command>/usr/bin/amixer set Master toggle-</command>
+    </action>
+  </keybind>
 </keyboard>
 
 <mouse>
