@@ -14,7 +14,7 @@
 #
 # Requirements:
 # - a working wifi interface that can be an AP
-# - udhcpd
+# - dnsmasq
 # - hostapd
 # - iptables
 # - iproute2 ('ip' command)
@@ -23,18 +23,19 @@
 
 ## <CONFIG> ##
 
-AP_IF=wlan1
-SSID="Free Tunisia"
-CHANNEL=8
+AP_IF=wlp3s0
+SSID="foodbeat"
+CHANNEL=1
 MAC=
-PSK=
+PSK='uph3Baeriemo'
 
-SUBNET=192.168.56.0
+SUBNET=192.168.88.0
 NETMASK_BITS=24
 
 # Try tell clients to use the NS that we use in /etc/resolv.conf
 # Note: many modern distros don't use /etc/resolv.conf anymore so it may fail 
 DNS=$(egrep ^nameserver /etc/resolv.conf | head -n 1 | awk {'print $2'})
+#DNS=10.1.0.1
 
 ## </CONFIG> ##
 
@@ -149,14 +150,11 @@ wpa_key_mgmt=WPA-PSK" >>$HOSTAPD_CFG
 
     echo Creating $UDHCPD_CFG...
 
-    # Configure udhcpd
-    echo "pidfile $UDHCPD_PID
-start $CLIENT_START
-end $CLIENT_END
-interface $AP_IF
-option router $AP_IP
-option dns $DNS
-option subnet $NETMASK_IP" >$UDHCPD_CFG
+    # Configure dnsmasq
+    echo "pid-file=$UDHCPD_PID
+dhcp-range=${AP_IF},${CLIENT_START},${CLIENT_END},2h
+dhcp-option=option:router,${AP_IP},option:dns-server,${DNS}
+" >$UDHCPD_CFG
 }
 
 up ()
@@ -174,9 +172,9 @@ up ()
     echo Starting hostapd
     hostapd -d -B -P $HOSTAPD_PID $HOSTAPD_CFG
 
-    # 3. Start udhcpd
-    echo Starting udhcpd
-    udhcpd $UDHCPD_CFG
+    # 3. Start dnsmasq
+    echo Starting dnsmasq
+    dnsmasq -C $UDHCPD_CFG
     
     # 4. Add iptables rule and enable forwarding
     iptables -t nat -A POSTROUTING -s $SUBNET/$NETMASK_BITS -j MASQUERADE
@@ -209,9 +207,9 @@ CLIENT_START=$(bin2ip $(dec2bin $(($(bin2dec $(ip2bin $AP_IP))+1))))
 CLIENT_END=$(bin2ip ${net_prefix_bin}$(printf '1%.s' $(seq $NETMASK_BITS 30))0)
 
 HOSTAPD_CFG=hostapd_$ID.cfg
-UDHCPD_CFG=udhcpd_$ID.cfg
+UDHCPD_CFG=dnsmasq_$ID.cfg
 HOSTAPD_PID=hostapd_$ID.pid
-UDHCPD_PID=udhcpd_$ID.pid
+UDHCPD_PID=dnsmasq_$ID.pid
 
 IP4_FWD_PREV=$(sysctl -n net.ipv4.ip_forward)
 
