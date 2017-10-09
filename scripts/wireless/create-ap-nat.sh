@@ -153,7 +153,8 @@ wpa_key_mgmt=WPA-PSK" >>$HOSTAPD_CFG
     # Configure dnsmasq
     echo "pid-file=$UDHCPD_PID
 dhcp-range=${AP_IF},${CLIENT_START},${CLIENT_END},2h
-dhcp-option=option:router,${AP_IP},option:dns-server,${DNS}
+dhcp-option=option:router,${AP_IP}
+dhcp-option=option:dns-server,${DNS}
 " >$UDHCPD_CFG
 }
 
