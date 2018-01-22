@@ -3,4 +3,4 @@
 TXT=$1
 shift
 
-echo "$TXT" | xclip -in $@
+echo -n "$TXT" | xclip -in $@
