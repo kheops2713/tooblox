@@ -1,0 +1,8 @@
+[Unit]
+Description=Parcimonie
+
+[Service]
+ExecStart=/home/kheops/apps/repository/git/parcimonie.sh/parcimonie.sh
+
+[Install]
+WantedBy=default.target
