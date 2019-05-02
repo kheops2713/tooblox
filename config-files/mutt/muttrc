@@ -42,6 +42,8 @@ macro index <f3> '<enter-command>source ~/.mutt/account2<enter><change-folder>!<
 # Note: it seems mutt must be compiled with slang rather than ncurses for this to work
 
 source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/strings-fr
+
 
 # Palette for use with the Linux console.  Black background.
 #color hdrdefault blue black
