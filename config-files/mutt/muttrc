@@ -44,6 +44,17 @@ macro index <f3> '<enter-command>source ~/.mutt/account2<enter><change-folder>!<
 source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
 source ~/.mutt/strings-fr
 
+# Sidebar settings
+set imap_check_subscribed
+set sidebar_visible = yes
+set sidebar_short_path = yes
+bind index,pager B sidebar-toggle-visible
+bind index,pager \Cp sidebar-prev
+bind index,pager \Cn sidebar-next
+bind index,pager \Co sidebar-open
+set mail_check_stats
+set sidebar_format = '%B%?F? [%F]?%* %?N?%N?'
+set sidebar_sort_method = new
 
 # Palette for use with the Linux console.  Black background.
 #color hdrdefault blue black
