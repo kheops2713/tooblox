@@ -2,4 +2,6 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput;
 application/pdf; evince %s;
 image/*; sxiv %s; edit=gimp %s;
 application/ms-tnef; tnef -w %s;
-
+text/calendar; vcal -all %s; copiousoutput;
+audio/*; mpv %s;
+video/*; mpv %s;
