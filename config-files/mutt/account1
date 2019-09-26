@@ -14,4 +14,5 @@ set record="=Sent"
 set pgp_encrypt_only_command="pgpewrap gpg --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust --encrypt-to 0x12345678 -- -r %r -- %f"
 set pgp_encrypt_sign_command="pgpewrap gpg --passphrase-fd 0 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust --encrypt-to 0x12345678 -- -r %r -- %f"
 set pgp_sign_as=0x12345678
+set pgp_default_key=123456789ABCDEF0123456789ABCDEF012345678
 
