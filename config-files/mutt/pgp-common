@@ -42,3 +42,8 @@ set crypt_verify_sig=yes
 
 # try to decihper old style PGP messages
 set pgp_auto_decode=yes
+
+# encrypt sent message with your own key to be able to read them from Sent
+# folder
+set pgp_self_encrypt=yes
+
