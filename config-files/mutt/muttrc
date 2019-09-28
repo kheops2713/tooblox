@@ -56,6 +56,13 @@ set mail_check_stats
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N?'
 set sidebar_sort_method = new
 
+# Abook: simple address book software that interacts with mutt (quite
+# unmaintained but still useful and simple)
+set query_command= "abook --mutt-query '%s'"
+macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
+bind editor        <Tab> complete-query
+
+
 # Palette for use with the Linux console.  Black background.
 #color hdrdefault blue black
 #color quoted green black
