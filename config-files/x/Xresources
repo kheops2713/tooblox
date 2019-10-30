@@ -9,7 +9,7 @@ Rxvt.loginShell: true
 URxvt*termName: rxvt
 
 ! Add tabbing and X clipboard connection (need urxt-perls package on ArchLinux)
-URxvt.perl-ext-common: default,tabbed,clipboard
+URxvt.perl-ext-common: default,tabbed,clipboard,fullscreen
 
 ! To open URLs in Firefox
 URxvt.perl-ext: default,matcher
@@ -27,4 +27,11 @@ URxvt*scrollBar: false
 URxvt*depth: 32
 URxvt*secondaryScreen: 1
 URxvt*secondaryScroll: 0
+
+! Police
+URxvt.keysym.M-plus: perl:font-increase
+URxvt.keysym.M-minus: perl:font-decrease
+
+! Fullscreen
+URxvt.keysym.F11: perl:fullscreen:switch
 
