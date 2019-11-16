@@ -54,3 +54,10 @@ t() {
   [ -n "$l" -a -n "$h" ] && \
   wmctrl -r :ACTIVE: -e 0,0,0,$l,$h
 }
+
+# Utilise la commande cal pour afficher le mois spécifié (1-12) de l'année
+# courante
+mois() {
+  m=$1
+  cal "$1" $(date +%Y)
+}
