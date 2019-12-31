@@ -321,11 +321,6 @@
       <command>/home/kheops/bidouille/toolbox/scripts/system/shutdown.sh</command>
     </action>
   </keybind>
-  <keybind key="W-r">
-    <action name="Execute">
-      <command>/usr/bin/systemctl reboot</command>
-    </action>
-  </keybind>
   <keybind key="XF86MonBrightnessUp">
     <action name="Execute">
       <command>/usr/bin/xbacklight -inc 5 -time 0 -steps 1</command>
