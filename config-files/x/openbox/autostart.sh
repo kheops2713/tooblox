@@ -1,3 +1,10 @@
+/usr/bin/gsettings set org.gnome.system.proxy mode manual
+/usr/bin/gsettings set org.gnome.system.proxy.http host localhost
+/usr/bin/gsettings set org.gnome.system.proxy.http port 8123
+/usr/bin/gsettings set org.gnome.system.proxy.https host localhost
+/usr/bin/gsettings set org.gnome.system.proxy.https port 8123
+/usr/bin/gsettings set org.gnome.system.proxy.socks host localhost
+/usr/bin/gsettings set org.gnome.system.proxy.socks port 9050
 tint2 &
 redshift &
 xautolock -locker /usr/bin/slock -time 3 &
