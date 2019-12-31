@@ -318,7 +318,7 @@
   </keybind>
   <keybind key="W-p">
     <action name="Execute">
-      <command>/usr/bin/systemctl poweroff</command>
+      <command>/home/kheops/bidouille/toolbox/scripts/system/shutdown.sh</command>
     </action>
   </keybind>
   <keybind key="W-r">
