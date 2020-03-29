@@ -1,13 +1,39 @@
 #!/bin/bash
 
+URL_CACHE_DIR=~/.cache/urlz
+
 # Pratique pour lire un article ou blogpost dans le terminal en évitant le
 # Javascript et les pubs, pour réduire l'utilisation du microprocesseur, la
-# consommation de bande passante, un petit peu l'empreinte écologique…
+# consommation de bande passante, un petit peu l'empreinte écologique… Avec un
+# cache local rudimentaire…
 url() {
-  URL="$1"
+  local URL="$1"
+
   if [ -n "$URL" ]; then
-    #curl "$URL" | html2text | pandoc -t plain | less
-    curl "$URL" | w3m -T text/html -dump | less
+    local fname=$(echo -n "$URL" | base64 -w 0)
+    local URLFILE="${URL_CACHE_DIR}/$fname"
+    zless "$URLFILE" 2>/dev/null || \
+      curl "$URL" | \
+      w3m -T text/html -dump | \
+      gzip -c | \
+      tee "$URLFILE" | \
+      gunzip -c | \
+      less
+  fi
+}
+
+urlls(){
+  find "$URL_CACHE_DIR" -type f -exec sh -c \
+    "echo \$(basename {}) | base64 -d" \; \
+    -printf " %Td/%Tm/%Ty %kK"
+}
+
+urlrm(){
+  local URL="$1"
+  if [ -n "$URL" ]; then
+    local fname=$(echo -n "$URL" | base64 -w 0)
+    local URLFILE="${URL_CACHE_DIR}/$fname"
+    rm "$URLFILE"
   fi
 }
 
