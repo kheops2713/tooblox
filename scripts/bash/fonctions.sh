@@ -25,7 +25,7 @@ url() {
 urlls(){
   find "$URL_CACHE_DIR" -type f -exec sh -c \
     "echo \$(basename {}) | base64 -d" \; \
-    -printf " %Td/%Tm/%Ty %kK"
+    -printf " %Td/%Tm/%Ty %TH:%TM %kK \\n"
 }
 
 urlrm(){
