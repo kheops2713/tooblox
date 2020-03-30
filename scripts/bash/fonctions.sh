@@ -10,7 +10,7 @@ url() {
   local URL="$1"
 
   if [ -n "$URL" ]; then
-    local fname=$(echo -n "$URL" | base64 -w 0)
+    local fname=$(echo -n "$URL" | urlencode)
     local URLFILE="${URL_CACHE_DIR}/$fname"
     zless "$URLFILE" 2>/dev/null || \
       curl "$URL" | \
@@ -25,7 +25,7 @@ url() {
 urlls(){
   find "$URL_CACHE_DIR" -type f \
     -printf "%T@ " \
-    -exec sh -c "echo \$(basename {}) | base64 -d" \; \
+    -exec sh -c "echo -n \$(basename {}) | urldecode" \; \
     -printf " %Td/%Tm/%Ty %TH:%TM %kK \\n" \
   | sort -rn \
   | cut -d' ' -f2-
@@ -34,7 +34,7 @@ urlls(){
 urlrm(){
   local URL="$1"
   if [ -n "$URL" ]; then
-    local fname=$(echo -n "$URL" | base64 -w 0)
+    local fname=$(echo -n "$URL" | urlencode)
     local URLFILE="${URL_CACHE_DIR}/$fname"
     rm "$URLFILE"
   fi
