@@ -26,7 +26,9 @@ urlls(){
   find "$URL_CACHE_DIR" -type f \
     -printf "%T@ " \
     -exec sh -c "echo -n \$(basename {}) | urldecode" \; \
-    -printf " %Td/%Tm/%Ty %TH:%TM %kK \\n" \
+    -printf " %Td/%Tm/%Ty %TH:%TM " \
+    -exec sh -c "echo scale=1\; \$(stat -c %s {})/1024.00 | bc -l | tr -d '\\n' " \; \
+    -exec sh -c "echo K" \; \
   | sort -rn \
   | cut -d' ' -f2-
 }
