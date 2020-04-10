@@ -34,12 +34,15 @@ urlls(){
 }
 
 urlrm(){
-  local URL="$1"
-  if [ -n "$URL" ]; then
-    local fname=$(echo -n "$URL" | urlencode)
-    local URLFILE="${URL_CACHE_DIR}/$fname"
-    rm "$URLFILE"
-  fi
+  while [ ${#@} -ne 0 ]; do
+    local URL="$1"
+    if [ -n "$URL" ]; then
+      local fname=$(echo -n "$URL" | urlencode)
+      local URLFILE="${URL_CACHE_DIR}/$fname"
+      rm "$URLFILE"
+    fi
+  shift
+  done
 }
 
 # Téléchargement rapidment un fichier, ça économise le temps d'écrire la ligne
