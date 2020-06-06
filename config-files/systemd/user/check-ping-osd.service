@@ -1,0 +1,10 @@
+[Unit]
+Description=Vérification de ping et affichage OSD
+
+[Service]
+ExecStart=/home/kheops/bidouille/toolbox/scripts/internet/ping-check-osd.sh
+RestartSec=5min
+Restart=always
+
+[Install]
+WantedBy=default.target
