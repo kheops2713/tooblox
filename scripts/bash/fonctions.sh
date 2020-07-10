@@ -1,6 +1,7 @@
 #!/bin/bash
 
 URL_CACHE_DIR=~/.cache/urlz
+IMGS_URL=https://imgs.be
 
 # Pratique pour lire un article ou blogpost dans le terminal en évitant le
 # Javascript et les pubs, pour réduire l'utilisation du microprocesseur, la
@@ -94,4 +95,9 @@ t() {
 mois() {
   m=$1
   cal "$1" $(date +%Y)
+}
+
+imgs() {
+  remotefile=$(curl -X POST -F image=@"$1" ${IMGS_URL}/upload)
+  echo ${IMGS_URL}/${remotefile}
 }
