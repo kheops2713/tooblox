@@ -1,0 +1,103 @@
+alias ls='ls --color=auto'
+alias ll='ls -al --color'
+alias llh='ls -ahl --color'
+alias L='ls --color=auto'
+alias rm='rm -i'
+alias mv='mv -i'
+alias cp='cp -i'
+alias l='ls --color=auto'
+alias ..="cd .."
+alias md=mkdir
+alias ↑↑↓↓←→←→BA="systemctl poweroff"
+alias p=pwd
+alias d="ls -d */ .*/"
+alias c=clear
+alias les=less
+alias lss=less
+alias vless="vim -R"
+alias am=alsamixer
+alias x=startx
+alias xci='xclip -in -selection clipboard'
+alias xco='xclip -out -selection clipboard'
+alias gc='git commit -s'
+alias gcp='git checkout'
+alias gph='git push'
+alias gpl='git pull'
+alias pdfr='pandoc -V lang=fr -V papersize=a4'
+alias sp='aspell -l fr_FR -a'
+alias m=neomutt
+alias ggrep='grep --exclude-dir=.git'
+
+source /usr/share/git/completion/git-prompt.sh
+source ~/bidouille/scripts/fonctions.sh
+
+LANG=fr_FR.UTF-8
+EDITOR=vim
+GPG_TTY=$(tty)
+HTTP_PROXY=http://localhost:8123
+http_proxy=http://localhost:8123
+HTTPS_PROXY=http://localhost:8123
+https_proxy=http://localhost:8123
+
+export PATH LANG EDITOR GPG_TTY HTTP_PROXY http_proxy HTTPS_PROXY https_proxy
+
+#PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
+
+BLACK='\[\e[0;30m\]'
+BLUE='\[\e[0;34m\]'
+GREEN='\[\e[0;32m\]'
+CYAN='\[\e[0;36m\]'
+RED='\[\e[0;31m\]'
+PURPLE='\[\e[0;35m\]'
+BROWN='\[\e[0;33m\]'
+L_GREY='\[\e[0;37m\]'
+GREY='\[\e[1;30m\]'
+L_BLUE='\[\e[1;34m\]'
+L_GREEN='\[\e[1;32m\]'
+L_CYAN='\[\e[1;36m\]'
+L_RED='\[\e[1;31m\]'
+L_PURPLE='\[\e[1;35m\]'
+YELLOW='\[\e[1;33m\]'
+WHITE='\[\e[1;37m\]'
+NC='\[\e[0m\]' # No Color
+
+# infos git dans le prompt
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_INFOS='$(__git_ps1)'
+
+# test SSH
+__ssh_agent_test() {
+  local mygrey="\e[1;30m"
+  local mycyan="\e[0;36m"
+  if [ -n "$SSH_AUTH_SOCK" ]; then
+    lines=$(ssh-add -l 2>/dev/null) 
+    retcode=$?
+    nkeys=$(echo -n "$lines" | grep '^[0-9]' | wc -l)
+    if [ $retcode -lt 2 ]; then
+      nkeys=$(echo -n "$nkeys" | sed 'y/0123456789/⁰¹²³⁴⁵⁶⁷⁸⁹/')
+      printf "$mygrey($mycyan🔑${nkeys}$mygrey)"
+    fi
+  fi
+}
+
+SSH_INFOS='$(__ssh_agent_test)'
+
+PS1="$GREY($L_GREEN\u$GREY@$CYAN\h:$BROWN\!$GREY)" # (user@host:123) user, host, command number
+PS1="${PS1}($CYAN\A$GREY)" # (23:59) date HH:MM
+PS1="${PS1}($CYAN\j$GREY)" # (0) jobs
+PS1="${PS1}($CYAN\w$GREY)" # (~/current/directory)
+PS1="${PS1}$SSH_INFOS"
+PS1="${PS1}$RED$GIT_INFOS\n" # (master *+%) git infos
+PS1="${PS1}$WHITE\$$NC " # ($) prompt character
+
+#alias archnews="echo -e \"$(echo $(curl --silent http://www.archlinux.org/feeds/news/ | sed -e ':a;N;$!ba;s/\n/ /g') | sed -e 's/&lt;\/a&gt;/@/g' | sed -e 's/<title>/\\n\\n\\n\\t:: \\e[01;31m/g' -e 's/<\/title>/\\e[00m ::\\n/g' | sed -e 's/<link>/ [ \\e[01;36m/g' -e 's/<\/link>/\\e[00m ]/g' | sed -e 's/<description>/\\n\\n\\e[00;37m/g' -e 's/<\/description>/\\e[00m\\n\\n/g' | sed -e 's/&lt;p&gt;/\n/g' | sed -e 's/&lt;a href\=\"\([^\"]*\)\"&gt;\([^@]*\)@/\\e[01;32m\2\\e[00;37m \\e[01;34m[ \\e[01;35m\1\\e[00;37m\\e[01;34m ]\\e[00;37m/g' | sed -e 's/&lt;li&gt;/\n \\e[01;34m*\\e[00;37m /g' | sed -e 's/<[^>]*>/ /g' | sed -e 's/&lt;.*&gt;//g')\n\n\""
+
+#PATH="/home/kheops/perl5/bin${PATH+:}${PATH}"; export PATH;
+#PERL5LIB="/home/kheops/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+#PERL_LOCAL_LIB_ROOT="/home/kheops/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}"; export PERL_LOCAL_LIB_ROOT;
+#PERL_MB_OPT="--install_base \"/home/kheops/perl5\""; export PERL_MB_OPT;
+#PERL_MM_OPT="INSTALL_BASE=/home/kheops/perl5"; export PERL_MM_OPT;
+
+PGP_ID=0xBA5B6E9F53BB2174 ~/bidouille/toolbox/scripts/gnupg/check_subkeys_expiration.sh
+
