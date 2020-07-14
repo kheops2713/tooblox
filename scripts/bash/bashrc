@@ -27,7 +27,7 @@ alias pdfr='pandoc -V lang=fr -V papersize=a4'
 alias sp='aspell -l fr_FR -a'
 alias m=neomutt
 alias ggrep='grep --exclude-dir=.git'
-alias tb="cd ~/apps/tor-browser_en-US && ./start-tor-browser.desktop"
+alias tb="cd ~/apps/tor-browser_en-US && ./start-tor-browser.desktop && cd -"
 
 source /usr/share/git/completion/git-prompt.sh
 source ~/bidouille/scripts/fonctions.sh
