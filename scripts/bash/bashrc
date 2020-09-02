@@ -20,7 +20,7 @@ alias x=startx
 alias xci='xclip -in -selection clipboard'
 alias xco='xclip -out -selection clipboard'
 alias gc='git commit -s'
-alias gcp='git checkout'
+alias gco='git checkout'
 alias gph='git push'
 alias gpl='git pull'
 alias pdfr='pandoc -V lang=fr -V papersize=a4'
