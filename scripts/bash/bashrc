@@ -23,6 +23,7 @@ alias gc='git commit -s'
 alias gco='git checkout'
 alias gph='git push'
 alias gpl='git pull'
+alias grb='git rebase -i'
 alias pdfr='pandoc -V lang=fr -V papersize=a4'
 alias sp='aspell -l fr_FR -a'
 alias m=neomutt
