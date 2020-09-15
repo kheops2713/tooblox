@@ -1,7 +1,6 @@
 alias ls='ls --color=auto'
 alias ll='ls -al --color'
 alias llh='ls -ahl --color'
-alias L='ls --color=auto'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
