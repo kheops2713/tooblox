@@ -82,7 +82,7 @@ __ssh_agent_test() {
 }
 
 __calcurse_event_check() {
-  local cco=$(calcurse -Q | wc -l)
+  local cco=$(calcurse -d 2 --filter-start-to "tomorrow $(date +"%H:%M")" | wc -l)
   local funmojis='🚴🍺🚲⛵🎃🧸🧬🔜☠😈'
   if [ "$cco" -gt 0 ]; then
     local disp=${funmojis:$(($RANDOM % ${#funmojis})):1}
