@@ -2,8 +2,11 @@
 # This requires 'connect-proxy' package
 # See https://bitbucket.org/gotoh/connect
 # See also connectrc in this repo
-Host *
+
+Host !192.168.* !10.* !172.16.* !fe80::* *
 CheckHostIP no
 Compression yes
 Protocol 2
-ProxyCommand connect -5 -S localhost:9050 %h %p
+ProxyCommand /usr/bin/nc -X 5 -x localhost:9050 %h %p
+UseRoaming no
+
