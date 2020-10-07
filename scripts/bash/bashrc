@@ -40,8 +40,9 @@ HTTP_PROXY=http://localhost:8123
 http_proxy=http://localhost:8123
 HTTPS_PROXY=http://localhost:8123
 https_proxy=http://localhost:8123
+GTK_IM_MODULE=xim
 
-export PATH LANG EDITOR GPG_TTY HTTP_PROXY http_proxy HTTPS_PROXY https_proxy
+export PATH LANG EDITOR GPG_TTY HTTP_PROXY http_proxy HTTPS_PROXY https_proxy GTK_IM_MODULE
 
 BLACK='\[\e[0;30m\]'
 BLUE='\[\e[0;34m\]'
