@@ -1,0 +1,20 @@
+[user]
+	name = KheOps
+	email = kheops@ceops.eu
+	signingkey = BA5B6E9F53BB2174
+[core]
+	editor = vim
+	precomposeunicode = true
+	quotePath = false
+[alias]
+	scommit = commit -s -S
+	stag = tag -s
+[http]
+	sslVerify = false
+	proxy = socks5h://127.0.0.1:9050
+[https]
+	proxy = socks5h://127.0.0.1:9050
+[merge]
+	tool = vimdiff
+[pull]
+	rebase = false
