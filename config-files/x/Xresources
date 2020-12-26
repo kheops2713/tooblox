@@ -2,7 +2,7 @@
 ! Note: it does not display cyrillic very well
 Rxvt.foreground: white
 Rxvt.background: black
-URxvt.font: xft:Inconsolata Regular:size=12:family=mono,xft:Symbola:size=13
+URxvt.font: xft:Inconsolata Regular:size=12:family=mono,xft:Noto Color Emoji:size=13
 Rxvt.loginShell: true
 
 ! URxvt to identify itself as rxvt, better known terminfo
