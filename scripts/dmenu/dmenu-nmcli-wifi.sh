@@ -2,7 +2,7 @@
 
 bssid=Rafraichir
 
-# This to convince nmcli it can display bars instead of starts for signal
+# This to convince nmcli it can display bars instead of stars for signal
 # strength
 export TERM=xterm-256color
 
