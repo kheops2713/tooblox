@@ -306,6 +306,11 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-bind.sh torify</command>
     </action>
   </keybind>
+  <keybind key="W-e">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-emoji.sh</command>
+    </action>
+  </keybind>
   <keybind key="W-l">
     <action name="Execute">
       <command>/usr/bin/slock</command>
