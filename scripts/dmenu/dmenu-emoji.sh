@@ -2,6 +2,8 @@
 
 # inspired from https://github.com/porras/dmenu-emoji
 
+# Note: -c options of dmenu requires patched version with centering
+
 set -e
 
 data=$(sed '0,/^__DATA__$/d' "$0")
