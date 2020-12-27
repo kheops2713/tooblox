@@ -5,7 +5,13 @@
 set -e
 
 data=$(sed '0,/^__DATA__$/d' "$0")
-sel=$(echo "$data" | dmenu -l 5 -b -nb '#ff35a6' -nf '#000000' -sb '#0d0090' -fn 'monospace-13')
+sel=$(echo "$data" | \
+  dmenu -l 5 -c \
+  -nb '#ff35a6' \
+  -sb '#ee2495' \
+  -nf '#000000' \
+  -sf '#ffffff' \
+  -fn 'Monospace-12')
 emoji=${sel: -1}
 echo -n "$emoji" | xclip -selection clipboard
 xdotool type "$emoji"
