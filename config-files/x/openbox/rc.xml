@@ -318,7 +318,7 @@
   </keybind>
   <keybind key="W-w">
     <action name="Execute">
-      <command>/usr/bin/wicd-gtk</command>
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-nmcli-wifi.sh</command>
     </action>
   </keybind>
   <keybind key="W-p">
