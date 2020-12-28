@@ -8,1448 +8,1660 @@ set -e
 
 data=$(sed '0,/^__DATA__$/d' "$0")
 sel=$(echo "$data" | \
-  dmenu -l 5 -c \
+  dmenu -l 10 -c \
   -nb '#ff35a6' \
   -sb '#ee2495' \
   -nf '#000000' \
   -sf '#ffffff' \
-  -fn 'Monospace-12')
-emoji=${sel: -1}
+  -fn 'sans-16')
+emoji=$(echo "$sel" | awk {'print $1'})
 echo -n "$emoji" | xclip -selection clipboard
 xdotool type "$emoji"
 
 exit
 
 __DATA__
-grinning face                                   😀
-smiling face with open mouth                    😃
-smiling face with open mouth & smiling eyes     😄
-grinning face with smiling eyes                 😁
-smiling face with open mouth & closed eyes      😆
-smiling face with open mouth & cold sweat       😅
-face with tears of joy                          😂
-rolling on the floor laughing                   🤣
-smiling face                                   ☺️
-smiling face with smiling eyes                  😊
-smiling face with halo                          😇
-slightly smiling face                           🙂
-upside-down face                                🙃
-winking face                                    😉
-relieved face                                   😌
-smiling face with heart-eyes                    😍
-face blowing a kiss                             😘
-kissing face                                    😗
-kissing face with smiling eyes                  😙
-kissing face with closed eyes                   😚
-face savouring delicious food                   😋
-face with stuck-out tongue & winking eye        😜
-face with stuck-out tongue & closed eyes        😝
-face with stuck-out tongue                      😛
-money-mouth face                                🤑
-hugging face                                    🤗
-nerd face                                       🤓
-smiling face with sunglasses                    😎
-clown face                                      🤡
-cowboy hat face                                 🤠
-smirking face                                   😏
-unamused face                                   😒
-disappointed face                               😞
-pensive face                                    😔
-worried face                                    😟
-confused face                                   😕
-slightly frowning face                          🙁
-frowning face                                  ☹️
-persevering face                                😣
-confounded face                                 😖
-tired face                                      😫
-weary face                                      😩
-face with steam from nose                       😤
-angry face                                      😠
-pouting face                                    😡
-face without mouth                              😶
-neutral face                                    😐
-expressionless face                             😑
-hushed face                                     😯
-frowning face with open mouth                   😦
-anguished face                                  😧
-face with open mouth                            😮
-astonished face                                 😲
-dizzy face                                      😵
-flushed face                                    😳
-face screaming in fear                          😱
-fearful face                                    😨
-face with open mouth & cold sweat               😰
-crying face                                     😢
-disappointed but relieved face                  😥
-drooling face                                   🤤
-loudly crying face                              😭
-face with cold sweat                            😓
-sleepy face                                     😪
-sleeping face                                   😴
-face with rolling eyes                          🙄
-thinking face                                   🤔
-lying face                                      🤥
-grimacing face                                  😬
-zipper-mouth face                               🤐
-nauseated face                                  🤢
-sneezing face                                   🤧
-face with medical mask                          😷
-face with thermometer                           🤒
-face with head-bandage                          🤕
-smiling face with horns                         😈
-angry face with horns                           👿
-ogre                                            👹
-goblin                                          👺
-pile of poo                                     💩
-ghost                                           👻
-skull                                           💀
-skull and crossbones                           ☠️
-alien                                           👽
-alien monster                                   👾
-robot face                                      🤖
-jack-o-lantern                                  🎃
-smiling cat face with open mouth                😺
-grinning cat face with smiling eyes             😸
-cat face with tears of joy                      😹
-smiling cat face with heart-eyes                😻
-cat face with wry smile                         😼
-kissing cat face with closed eyes               😽
-weary cat face                                  🙀
-crying cat face                                 😿
-pouting cat face                                😾
-open hands                                      👐
-raising hands                                   🙌
-clapping hands                                  👏
-folded hands                                    🙏
-handshake                                       🤝
-thumbs up                                       👍
-thumbs down                                     👎
-oncoming fist                                   👊
-raised fist                                     ✊
-left-facing fist                                🤛
-right-facing fist                               🤜
-crossed fingers                                 🤞
-victory hand                                   ✌️
-sign of the horns                               🤘
-OK hand                                         👌
-backhand index pointing left                    👈
-backhand index pointing right                   👉
-backhand index pointing up                      👆
-backhand index pointing down                    👇
-index pointing up                              ☝️
-raised hand                                     ✋
-raised back of hand                             🤚
-raised hand with fingers splayed                🖐
-vulcan salute                                   🖖
-waving hand                                     👋
-call me hand                                    🤙
-flexed biceps                                   💪
-middle finger                                   🖕
-writing hand                                   ✍️
-selfie                                          🤳
-nail polish                                     💅
-ring                                            💍
-lipstick                                        💄
-kiss mark                                       💋
-mouth                                           👄
-tongue                                          👅
-ear                                             👂
-nose                                            👃
-footprints                                      👣
-eye                                             👁
-eyes                                            👀
-speaking head                                   🗣
-bust in silhouette                              👤
-busts in silhouette                             👥
-baby                                            👶
-boy                                             👦
-girl                                            👧
-man                                             👨
-woman                                           👩
-blond-haired woman                            👱‍♀
-blond-haired person                             👱
-old man                                         👴
-old woman                                       👵
-man with Chinese cap                            👲
-woman wearing turban                          👳‍♀
-person wearing turban                           👳
-woman police officer                          👮‍♀
-police officer                                  👮
-woman construction worker                     👷‍♀
-construction worker                             👷
-woman guard                                   💂‍♀
-guard                                           💂
-woman detective                             🕵️‍♀️
-detective                                       🕵
-woman health worker                           👩‍⚕
-man health worker                             👨‍⚕
-woman farmer                                  👩‍🌾
-man farmer                                    👨‍🌾
-woman cook                                    👩‍🍳
-man cook                                      👨‍🍳
-woman student                                 👩‍🎓
-man student                                   👨‍🎓
-woman singer                                  👩‍🎤
-man singer                                    👨‍🎤
-woman teacher                                 👩‍🏫
-man teacher                                   👨‍🏫
-woman factory worker                          👩‍🏭
-man factory worker                            👨‍🏭
-woman technologist                            👩‍💻
-man technologist                              👨‍💻
-woman office worker                           👩‍💼
-man office worker                             👨‍💼
-woman mechanic                                👩‍🔧
-man mechanic                                  👨‍🔧
-woman scientist                               👩‍🔬
-man scientist                                 👨‍🔬
-woman artist                                  👩‍🎨
-man artist                                    👨‍🎨
-woman firefighter                             👩‍🚒
-man firefighter                               👨‍🚒
-woman pilot                                   👩‍✈
-man pilot                                     👨‍✈
-woman astronaut                               👩‍🚀
-man astronaut                                 👨‍🚀
-woman judge                                   👩‍⚖
-man judge                                     👨‍⚖
-Mrs. Claus                                      🤶
-Santa Claus                                     🎅
-princess                                        👸
-prince                                          🤴
-bride with veil                                 👰
-man in tuxedo                                   🤵
-baby angel                                      👼
-pregnant woman                                  🤰
-woman bowing                                  🙇‍♀
-person bowing                                   🙇
-person tipping hand                             💁
-man tipping hand                              💁‍♂
-person gesturing NO                             🙅
-man gesturing NO                              🙅‍♂
-person gesturing OK                             🙆
-man gesturing OK                              🙆‍♂
-person raising hand                             🙋
-man raising hand                              🙋‍♂
-woman facepalming                             🤦‍♀
-man facepalming                               🤦‍♂
-woman shrugging                               🤷‍♀
-man shrugging                                 🤷‍♂
-person pouting                                  🙎
-man pouting                                   🙎‍♂
-person frowning                                 🙍
-man frowning                                  🙍‍♂
-person getting haircut                          💇
-man getting haircut                           💇‍♂
-person getting massage                          💆
-man getting massage                           💆‍♂
-man in business suit levitating                 🕴
-woman dancing                                   💃
-man dancing                                     🕺
-people with bunny ears partying                 👯
-men with bunny ears partying                  👯‍♂
-woman walking                                 🚶‍♀
-person walking                                  🚶
-woman running                                 🏃‍♀
-person running                                  🏃
-man and woman holding hands                     👫
-two women holding hands                         👭
-two men holding hands                           👬
-couple with heart                               💑
-couple with heart: woman             woman            👩‍❤️‍👩
-couple with heart: man                 man                👨‍❤️‍👨
-kiss                                            💏
-kiss: woman                        woman                       👩‍❤️‍💋‍👩
-kiss: man                            man                           👨‍❤️‍💋‍👨
-family                                          👪
-family: man                     woman                     girl                    👨‍👩‍👧
-family: man              woman              girl              boy             👨‍👩‍👧‍👦
-family: man               woman               boy               boy              👨‍👩‍👦‍👦
-family: man             woman             girl             girl            👨‍👩‍👧‍👧
-family: woman                    woman                    boy                   👩‍👩‍👦
-family: woman                   woman                   girl                  👩‍👩‍👧
-family: woman            woman            girl            boy           👩‍👩‍👧‍👦
-family: woman             woman             boy             boy            👩‍👩‍👦‍👦
-family: woman           woman           girl           girl          👩‍👩‍👧‍👧
-family: man                        man                        boy                       👨‍👨‍👦
-family: man                       man                       girl                      👨‍👨‍👧
-family: man                man                girl                boy               👨‍👨‍👧‍👦
-family: man                 man                 boy                 boy                👨‍👨‍👦‍👦
-family: man               man               girl               girl              👨‍👨‍👧‍👧
-family: woman                             boy                            👩‍👦
-family: woman                            girl                           👩‍👧
-family: woman                     girl                     boy                    👩‍👧‍👦
-family: woman                      boy                      boy                     👩‍👦‍👦
-family: woman                    girl                    girl                   👩‍👧‍👧
-family: man                               boy                              👨‍👦
-family: man                              girl                             👨‍👧
-family: man                       girl                       boy                      👨‍👧‍👦
-family: man                        boy                        boy                       👨‍👦‍👦
-family: man                      girl                      girl                     👨‍👧‍👧
-woman’s clothes                                 👚
-t-shirt                                         👕
-jeans                                           👖
-necktie                                         👔
-dress                                           👗
-bikini                                          👙
-kimono                                          👘
-high-heeled shoe                                👠
-woman’s sandal                                  👡
-woman’s boot                                    👢
-man’s shoe                                      👞
-running shoe                                    👟
-woman’s hat                                     👒
-top hat                                         🎩
-graduation cap                                  🎓
-crown                                           👑
-rescue worker’s helmet                          ⛑
-school backpack                                 🎒
-clutch bag                                      👝
-purse                                           👛
-handbag                                         👜
-briefcase                                       💼
-glasses                                         👓
-sunglasses                                      🕶
-closed umbrella                                 🌂
-umbrella                                       ☂️
-dog face                                        🐶
-cat face                                        🐱
-mouse face                                      🐭
-hamster face                                    🐹
-rabbit face                                     🐰
-fox face                                        🦊
-bear face                                       🐻
-panda face                                      🐼
-koala                                           🐨
-tiger face                                      🐯
-lion face                                       🦁
-cow face                                        🐮
-pig face                                        🐷
-pig nose                                        🐽
-frog face                                       🐸
-monkey face                                     🐵
-see-no-evil monkey                              🙈
-hear-no-evil monkey                             🙉
-speak-no-evil monkey                            🙊
-monkey                                          🐒
-chicken                                         🐔
-penguin                                         🐧
-bird                                            🐦
-baby chick                                      🐤
-hatching chick                                  🐣
-front-facing baby chick                         🐥
-duck                                            🦆
-eagle                                           🦅
-owl                                             🦉
-bat                                             🦇
-wolf face                                       🐺
-boar                                            🐗
-horse face                                      🐴
-unicorn face                                    🦄
-honeybee                                        🐝
-bug                                             🐛
-butterfly                                       🦋
-snail                                           🐌
-spiral shell                                    🐚
-lady beetle                                     🐞
-ant                                             🐜
-spider                                          🕷
-spider web                                      🕸
-turtle                                          🐢
-snake                                           🐍
-lizard                                          🦎
-scorpion                                        🦂
-crab                                            🦀
-squid                                           🦑
-octopus                                         🐙
-shrimp                                          🦐
-tropical fish                                   🐠
-fish                                            🐟
-blowfish                                        🐡
-dolphin                                         🐬
-shark                                           🦈
-spouting whale                                  🐳
-whale                                           🐋
-crocodile                                       🐊
-leopard                                         🐆
-tiger                                           🐅
-water buffalo                                   🐃
-ox                                              🐂
-cow                                             🐄
-deer                                            🦌
-camel                                           🐪
-two-hump camel                                  🐫
-elephant                                        🐘
-rhinoceros                                      🦏
-gorilla                                         🦍
-horse                                           🐎
-pig                                             🐖
-goat                                            🐐
-ram                                             🐏
-sheep                                           🐑
-dog                                             🐕
-poodle                                          🐩
-cat                                             🐈
-rooster                                         🐓
-turkey                                          🦃
-dove                                            🕊
-rabbit                                          🐇
-mouse                                           🐁
-rat                                             🐀
-chipmunk                                        🐿
-paw prints                                      🐾
-dragon                                          🐉
-dragon face                                     🐲
-cactus                                          🌵
-Christmas tree                                  🎄
-evergreen tree                                  🌲
-deciduous tree                                  🌳
-palm tree                                       🌴
-seedling                                        🌱
-herb                                            🌿
-shamrock                                       ☘️
-four leaf clover                                🍀
-pine decoration                                 🎍
-tanabata tree                                   🎋
-leaf fluttering in wind                         🍃
-fallen leaf                                     🍂
-maple leaf                                      🍁
-mushroom                                        🍄
-sheaf of rice                                   🌾
-bouquet                                         💐
-tulip                                           🌷
-rose                                            🌹
-wilted flower                                   🥀
-sunflower                                       🌻
-blossom                                         🌼
-cherry blossom                                  🌸
-hibiscus                                        🌺
-globe showing Americas                          🌎
-globe showing Europe-Africa                     🌍
-globe showing Asia-Australia                    🌏
-full moon                                       🌕
-waning gibbous moon                             🌖
-last quarter moon                               🌗
-waning crescent moon                            🌘
-new moon                                        🌑
-waxing crescent moon                            🌒
-first quarter moon                              🌓
-waxing gibbous moon                             🌔
-new moon face                                   🌚
-full moon with face                             🌝
-sun with face                                   🌞
-first quarter moon with face                    🌛
-last quarter moon with face                     🌜
-crescent moon                                   🌙
-dizzy                                           💫
-white medium star                              ⭐️
-glowing star                                    🌟
-sparkles                                        ✨
-high voltage                                   ⚡️
-fire                                            🔥
-collision                                       💥
-comet                                           ☄
-sun                                            ☀️
-sun behind small cloud                          🌤
-sun behind cloud                               ⛅️
-sun behind large cloud                          🌥
-sun behind rain cloud                           🌦
-rainbow                                         🌈
-cloud                                          ☁️
-cloud with rain                                 🌧
-cloud with lightning and rain                   ⛈
-cloud with lightning                            🌩
-cloud with snow                                 🌨
-snowman                                        ☃️
-snowman without snow                           ⛄️
-snowflake                                      ❄️
-wind face                                       🌬
-dashing away                                    💨
-tornado                                         🌪
-fog                                             🌫
-water wave                                      🌊
-droplet                                         💧
-sweat droplets                                  💦
-umbrella with rain drops                       ☔️
-green apple                                     🍏
-red apple                                       🍎
-pear                                            🍐
-tangerine                                       🍊
-lemon                                           🍋
-banana                                          🍌
-watermelon                                      🍉
-grapes                                          🍇
-strawberry                                      🍓
-melon                                           🍈
-cherries                                        🍒
-peach                                           🍑
-pineapple                                       🍍
-kiwi fruit                                      🥝
-avocado                                         🥑
-tomato                                          🍅
-eggplant                                        🍆
-cucumber                                        🥒
-carrot                                          🥕
-ear of corn                                     🌽
-hot pepper                                      🌶
-potato                                          🥔
-roasted sweet potato                            🍠
-chestnut                                        🌰
-peanuts                                         🥜
-honey pot                                       🍯
-croissant                                       🥐
-bread                                           🍞
-baguette bread                                  🥖
-cheese wedge                                    🧀
-egg                                             🥚
-cooking                                         🍳
-bacon                                           🥓
-pancakes                                        🥞
-fried shrimp                                    🍤
-poultry leg                                     🍗
-meat on bone                                    🍖
-pizza                                           🍕
-hot dog                                         🌭
-hamburger                                       🍔
-french fries                                    🍟
-stuffed flatbread                               🥙
-taco                                            🌮
-burrito                                         🌯
-green salad                                     🥗
-shallow pan of food                             🥘
-spaghetti                                       🍝
-steaming bowl                                   🍜
-pot of food                                     🍲
-fish cake with swirl                            🍥
-sushi                                           🍣
-bento box                                       🍱
-curry rice                                      🍛
-cooked rice                                     🍚
-rice ball                                       🍙
-rice cracker                                    🍘
-oden                                            🍢
-dango                                           🍡
-shaved ice                                      🍧
-ice cream                                       🍨
-soft ice cream                                  🍦
-shortcake                                       🍰
-birthday cake                                   🎂
-custard                                         🍮
-lollipop                                        🍭
-candy                                           🍬
-chocolate bar                                   🍫
-popcorn                                         🍿
-doughnut                                        🍩
-cookie                                          🍪
-glass of milk                                   🥛
-baby bottle                                     🍼
-hot beverage                                   ☕️
-teacup without handle                           🍵
-sake                                            🍶
-beer mug                                        🍺
-clinking beer mugs                              🍻
-clinking glasses                                🥂
-wine glass                                      🍷
-tumbler glass                                   🥃
-cocktail glass                                  🍸
-tropical drink                                  🍹
-bottle with popping cork                        🍾
-spoon                                           🥄
-fork and knife                                  🍴
-fork and knife with plate                       🍽
-soccer ball                                    ⚽️
-basketball                                      🏀
-american football                               🏈
-baseball                                       ⚾️
-tennis                                          🎾
-volleyball                                      🏐
-rugby football                                  🏉
-pool 8 ball                                     🎱
-ping pong                                       🏓
-badminton                                       🏸
-goal net                                        🥅
-ice hockey                                      🏒
-field hockey                                    🏑
-cricket                                         🏏
-flag in hole                                   ⛳️
-bow and arrow                                   🏹
-fishing pole                                    🎣
-boxing glove                                    🥊
-martial arts uniform                            🥋
-ice skate                                       ⛸
-skis                                            🎿
-skier                                           ⛷
-snowboarder                                     🏂
-woman lifting weights                       🏋️‍♀️
-person lifting weights                          🏋
-person fencing                                  🤺
-women wrestling                               🤼‍♀
-men wrestling                                 🤼‍♂
-woman cartwheeling                            🤸‍♀
-man cartwheeling                              🤸‍♂
-woman bouncing ball                         ⛹️‍♀️
-person bouncing ball                            ⛹
-woman playing handball                        🤾‍♀
-man playing handball                          🤾‍♂
-woman golfing                               🏌️‍♀️
-person golfing                                  🏌
-woman surfing                                 🏄‍♀
-person surfing                                  🏄
-woman swimming                                🏊‍♀
-person swimming                                 🏊
-woman playing water polo                      🤽‍♀
-man playing water polo                        🤽‍♂
-woman rowing boat                             🚣‍♀
-person rowing boat                              🚣
-horse racing                                    🏇
-woman biking                                  🚴‍♀
-person biking                                   🚴
-woman mountain biking                         🚵‍♀
-person mountain biking                          🚵
-running shirt                                   🎽
-sports medal                                    🏅
-military medal                                  🎖
-1st place medal                                 🥇
-2nd place medal                                 🥈
-3rd place medal                                 🥉
-trophy                                          🏆
-rosette                                         🏵
-reminder ribbon                                 🎗
-ticket                                          🎫
-admission tickets                               🎟
-circus tent                                     🎪
-woman juggling                                🤹‍♀
-man juggling                                  🤹‍♂
-performing arts                                 🎭
-artist palette                                  🎨
-clapper board                                   🎬
-microphone                                      🎤
-headphone                                       🎧
-musical score                                   🎼
-musical keyboard                                🎹
-drum                                            🥁
-saxophone                                       🎷
-trumpet                                         🎺
-guitar                                          🎸
-violin                                          🎻
-game die                                        🎲
-direct hit                                      🎯
-bowling                                         🎳
-video game                                      🎮
-slot machine                                    🎰
-automobile                                      🚗
-taxi                                            🚕
-sport utility vehicle                           🚙
-bus                                             🚌
-trolleybus                                      🚎
-racing car                                      🏎
-police car                                      🚓
-ambulance                                       🚑
-fire engine                                     🚒
-minibus                                         🚐
-delivery truck                                  🚚
-articulated lorry                               🚛
-tractor                                         🚜
-kick scooter                                    🛴
-bicycle                                         🚲
-motor scooter                                   🛵
-motorcycle                                      🏍
-police car light                                🚨
-oncoming police car                             🚔
-oncoming bus                                    🚍
-oncoming automobile                             🚘
-oncoming taxi                                   🚖
-aerial tramway                                  🚡
-mountain cableway                               🚠
-suspension railway                              🚟
-railway car                                     🚃
-tram car                                        🚋
-mountain railway                                🚞
-monorail                                        🚝
-high-speed train                                🚄
-high-speed train with bullet nose               🚅
-light rail                                      🚈
-locomotive                                      🚂
-train                                           🚆
-metro                                           🚇
-tram                                            🚊
-station                                         🚉
-helicopter                                      🚁
-small airplane                                  🛩
-airplane                                       ✈️
-airplane departure                              🛫
-airplane arrival                                🛬
-rocket                                          🚀
-satellite                                       🛰
-seat                                            💺
-canoe                                           🛶
-sailboat                                       ⛵️
-motor boat                                      🛥
-speedboat                                       🚤
-passenger ship                                  🛳
-ferry                                           ⛴
-ship                                            🚢
-anchor                                         ⚓️
-construction                                    🚧
-fuel pump                                      ⛽️
-bus stop                                        🚏
-vertical traffic light                          🚦
-horizontal traffic light                        🚥
-world map                                       🗺
-moai                                            🗿
-Statue of Liberty                               🗽
-fountain                                       ⛲️
-Tokyo tower                                     🗼
-castle                                          🏰
-Japanese castle                                 🏯
-stadium                                         🏟
-ferris wheel                                    🎡
-roller coaster                                  🎢
-carousel horse                                  🎠
-umbrella on ground                              ⛱
-beach with umbrella                             🏖
-desert island                                   🏝
-mountain                                        ⛰
-snow-capped mountain                            🏔
-mount fuji                                      🗻
-volcano                                         🌋
-desert                                          🏜
-camping                                         🏕
-tent                                           ⛺️
-railway track                                   🛤
-motorway                                        🛣
-building construction                           🏗
-factory                                         🏭
-house                                           🏠
-house with garden                               🏡
-house                                           🏘
-derelict house                                  🏚
-office building                                 🏢
-department store                                🏬
-Japanese post office                            🏣
-post office                                     🏤
-hospital                                        🏥
-bank                                            🏦
-hotel                                           🏨
-convenience store                               🏪
-school                                          🏫
-love hotel                                      🏩
-wedding                                         💒
-classical building                              🏛
-church                                         ⛪️
-mosque                                          🕌
-synagogue                                       🕍
-kaaba                                           🕋
-shinto shrine                                   ⛩
-map of Japan                                    🗾
-moon viewing ceremony                           🎑
-national park                                   🏞
-sunrise                                         🌅
-sunrise over mountains                          🌄
-shooting star                                   🌠
-sparkler                                        🎇
-fireworks                                       🎆
-sunset                                          🌇
-cityscape at dusk                               🌆
-cityscape                                       🏙
-night with stars                                🌃
-milky way                                       🌌
-bridge at night                                 🌉
-foggy                                           🌁
-watch                                          ⌚️
-mobile phone                                    📱
-mobile phone with arrow                         📲
-laptop computer                                 💻
-keyboard                                       ⌨️
-desktop computer                                🖥
-printer                                         🖨
-computer mouse                                  🖱
-trackball                                       🖲
-joystick                                        🕹
-clamp                                           🗜
-computer disk                                   💽
-floppy disk                                     💾
-optical disk                                    💿
-dvd                                             📀
-videocassette                                   📼
-camera                                          📷
-camera with flash                               📸
-video camera                                    📹
-movie camera                                    🎥
-film projector                                  📽
-film frames                                     🎞
-telephone receiver                              📞
-telephone                                      ☎️
-pager                                           📟
-fax machine                                     📠
-television                                      📺
-radio                                           📻
-studio microphone                               🎙
-level slider                                    🎚
-control knobs                                   🎛
-stopwatch                                       ⏱
-timer clock                                     ⏲
-alarm clock                                     ⏰
-mantelpiece clock                               🕰
-hourglass                                      ⌛️
-hourglass with flowing sand                     ⏳
-satellite antenna                               📡
-battery                                         🔋
-electric plug                                   🔌
-light bulb                                      💡
-flashlight                                      🔦
-candle                                          🕯
-wastebasket                                     🗑
-oil drum                                        🛢
-money with wings                                💸
-dollar banknote                                 💵
-yen banknote                                    💴
-euro banknote                                   💶
-pound banknote                                  💷
-money bag                                       💰
-credit card                                     💳
-gem stone                                       💎
-balance scale                                  ⚖️
-wrench                                          🔧
-hammer                                          🔨
-hammer and pick                                 ⚒
-hammer and wrench                               🛠
-pick                                            ⛏
-nut and bolt                                    🔩
-gear                                           ⚙️
-chains                                          ⛓
-pistol                                          🔫
-bomb                                            💣
-kitchen knife                                   🔪
-dagger                                          🗡
-crossed swords                                 ⚔️
-shield                                          🛡
-cigarette                                       🚬
-coffin                                         ⚰️
-funeral urn                                    ⚱️
-amphora                                         🏺
-crystal ball                                    🔮
-prayer beads                                    📿
-barber pole                                     💈
-alembic                                        ⚗️
-telescope                                       🔭
-microscope                                      🔬
-hole                                            🕳
-pill                                            💊
-syringe                                         💉
-thermometer                                     🌡
-toilet                                          🚽
-potable water                                   🚰
-shower                                          🚿
-bathtub                                         🛁
-person taking bath                              🛀
-bellhop bell                                    🛎
-key                                             🔑
-old key                                         🗝
-door                                            🚪
-couch and lamp                                  🛋
-bed                                             🛏
-person in bed                                   🛌
-framed picture                                  🖼
-shopping bags                                   🛍
-shopping cart                                   🛒
-wrapped gift                                    🎁
-balloon                                         🎈
-carp streamer                                   🎏
-ribbon                                          🎀
-confetti ball                                   🎊
-party popper                                    🎉
-Japanese dolls                                  🎎
-red paper lantern                               🏮
-wind chime                                      🎐
-envelope                                       ✉️
-envelope with arrow                             📩
-incoming envelope                               📨
-e-mail                                          📧
-love letter                                     💌
-inbox tray                                      📥
-outbox tray                                     📤
-package                                         📦
-label                                           🏷
-closed mailbox with lowered flag                📪
-closed mailbox with raised flag                 📫
-open mailbox with raised flag                   📬
-open mailbox with lowered flag                  📭
-postbox                                         📮
-postal horn                                     📯
-scroll                                          📜
-page with curl                                  📃
-page facing up                                  📄
-bookmark tabs                                   📑
-bar chart                                       📊
-chart increasing                                📈
-chart decreasing                                📉
-spiral notepad                                  🗒
-spiral calendar                                 🗓
-tear-off calendar                               📆
-calendar                                        📅
-card index                                      📇
-card file box                                   🗃
-ballot box with ballot                          🗳
-file cabinet                                    🗄
-clipboard                                       📋
-file folder                                     📁
-open file folder                                📂
-card index dividers                             🗂
-rolled-up newspaper                             🗞
-newspaper                                       📰
-notebook                                        📓
-notebook with decorative cover                  📔
-ledger                                          📒
-closed book                                     📕
-green book                                      📗
-blue book                                       📘
-orange book                                     📙
-books                                           📚
-open book                                       📖
-bookmark                                        🔖
-link                                            🔗
-paperclip                                       📎
-linked paperclips                               🖇
-triangular ruler                                📐
-straight ruler                                  📏
-pushpin                                         📌
-round pushpin                                   📍
-scissors                                       ✂️
-pen                                             🖊
-fountain pen                                    🖋
-black nib                                      ✒️
-paintbrush                                      🖌
-crayon                                          🖍
-memo                                            📝
-pencil                                         ✏️
-left-pointing magnifying glass                  🔍
-right-pointing magnifying glass                 🔎
-locked with pen                                 🔏
-locked with key                                 🔐
-locked                                          🔒
-unlocked                                        🔓
-red heart                                      ❤️
-yellow heart                                    💛
-green heart                                     💚
-blue heart                                      💙
-purple heart                                    💜
-black heart                                     🖤
-broken heart                                    💔
-heavy heart exclamation                        ❣️
-two hearts                                      💕
-revolving hearts                                💞
-beating heart                                   💓
-growing heart                                   💗
-sparkling heart                                 💖
-heart with arrow                                💘
-heart with ribbon                               💝
-heart decoration                                💟
-peace symbol                                   ☮️
-latin cross                                    ✝️
-star and crescent                              ☪️
-om                                              🕉
-wheel of dharma                                ☸️
-star of David                                  ✡️
-dotted six-pointed star                         🔯
-menorah                                         🕎
-yin yang                                       ☯️
-orthodox cross                                 ☦️
-place of worship                                🛐
-Ophiuchus                                       ⛎
-Aries                                          ♈️
-Taurus                                         ♉️
-Gemini                                         ♊️
-Cancer                                         ♋️
-Leo                                            ♌️
-Virgo                                          ♍️
-Libra                                          ♎️
-Scorpius                                       ♏️
-Sagittarius                                    ♐️
-Capricorn                                      ♑️
-Aquarius                                       ♒️
-Pisces                                         ♓️
-ID button                                       🆔
-atom symbol                                    ⚛️
-Japanese “acceptable” button                    🉑
-radioactive                                    ☢️
-biohazard                                      ☣️
-mobile phone off                                📴
-vibration mode                                  📳
-Japanese “not free of charge” button            🈶
-Japanese “free of charge” button               🈚️
-Japanese “application” button                   🈸
-Japanese “open for business” button             🈺
-Japanese “monthly amount” button               🈷️
-eight-pointed star                             ✴️
-VS button                                       🆚
-white flower                                    💮
-Japanese “bargain” button                       🉐
-Japanese “secret” button                       ㊙️
-Japanese “congratulations” button              ㊗️
-Japanese “passing grade” button                 🈴
-Japanese “no vacancy” button                    🈵
-Japanese “discount” button                      🈹
-Japanese “prohibited” button                    🈲
-A button (blood type)                          🅰️
-B button (blood type)                          🅱️
-AB button (blood type)                          🆎
-CL button                                       🆑
-O button (blood type)                          🅾️
-SOS button                                      🆘
-cross mark                                      ❌
-heavy large circle                             ⭕️
-stop sign                                       🛑
-no entry                                       ⛔️
-name badge                                      📛
-prohibited                                      🚫
-hundred points                                  💯
-anger symbol                                    💢
-hot springs                                    ♨️
-no pedestrians                                  🚷
-no littering                                    🚯
-no bicycles                                     🚳
-non-potable water                               🚱
-no one under eighteen                           🔞
-no mobile phones                                📵
-no smoking                                      🚭
-exclamation mark                               ❗️
-white exclamation mark                          ❕
-question mark                                   ❓
-white question mark                             ❔
-double exclamation mark                        ‼️
-exclamation question mark                      ⁉️
-dim button                                      🔅
-bright button                                   🔆
-part alternation mark                          〽️
-warning                                        ⚠️
-children crossing                               🚸
-trident emblem                                  🔱
-fleur-de-lis                                   ⚜️
-Japanese symbol for beginner                    🔰
-recycling symbol                               ♻️
-white heavy check mark                          ✅
-Japanese “reserved” button                     🈯️
-chart increasing with yen                       💹
-sparkle                                        ❇️
-eight-spoked asterisk                          ✳️
-cross mark button                               ❎
-globe with meridians                            🌐
-diamond with a dot                              💠
-circled M                                      Ⓜ️
-cyclone                                         🌀
-zzz                                             💤
-ATM sign                                        🏧
-water closet                                    🚾
-wheelchair symbol                              ♿️
-P button                                       🅿️
-Japanese “vacancy” button                       🈳
-Japanese “service charge” button               🈂️
-passport control                                🛂
-customs                                         🛃
-baggage claim                                   🛄
-left luggage                                    🛅
-men’s room                                      🚹
-women’s room                                    🚺
-baby symbol                                     🚼
-restroom                                        🚻
-litter in bin sign                              🚮
-cinema                                          🎦
-antenna bars                                    📶
-Japanese “here” button                          🈁
-input symbols                                   🔣
-information                                    ℹ️
-input latin letters                             🔤
-input latin lowercase                           🔡
-input latin uppercase                           🔠
-NG button                                       🆖
-OK button                                       🆗
-UP! button                                      🆙
-COOL button                                     🆒
-NEW button                                      🆕
-FREE button                                     🆓
-keycap: 0                                     0️⃣
-keycap: 1                                     1️⃣
-keycap: 2                                     2️⃣
-keycap: 3                                     3️⃣
-keycap: 4                                     4️⃣
-keycap: 5                                     5️⃣
-keycap: 6                                     6️⃣
-keycap: 7                                     7️⃣
-keycap: 8                                     8️⃣
-keycap: 9                                     9️⃣
-keycap 10                                       🔟
-input numbers                                   🔢
-keycap: #                                     #️⃣
-keycap: *                                     *️⃣
-play button                                    ▶️
-pause button                                    ⏸
-play or pause button                            ⏯
-stop button                                     ⏹
-record button                                   ⏺
-next track button                               ⏭
-last track button                               ⏮
-fast-forward button                             ⏩
-fast reverse button                             ⏪
-fast up button                                  ⏫
-fast down button                                ⏬
-reverse button                                 ◀️
-up button                                       🔼
-down button                                     🔽
-right arrow                                    ➡️
-left arrow                                     ⬅️
-up arrow                                       ⬆️
-down arrow                                     ⬇️
-up-right arrow                                 ↗️
-down-right arrow                               ↘️
-down-left arrow                                ↙️
-up-left arrow                                  ↖️
-up-down arrow                                  ↕️
-left-right arrow                               ↔️
-left arrow curving right                       ↪️
-right arrow curving left                       ↩️
-right arrow curving up                         ⤴️
-right arrow curving down                       ⤵️
-shuffle tracks button                           🔀
-repeat button                                   🔁
-repeat single button                            🔂
-anticlockwise arrows button                     🔄
-clockwise vertical arrows                       🔃
-musical note                                    🎵
-musical notes                                   🎶
-heavy plus sign                                 ➕
-heavy minus sign                                ➖
-heavy division sign                             ➗
-heavy multiplication x                         ✖️
-heavy dollar sign                               💲
-currency exchange                               💱
-trade mark                                     ™️
-copyright                                      ©️
-registered                                     ®️
-wavy dash                                      〰️
-curly loop                                      ➰
-double curly loop                               ➿
-END arrow                                       🔚
-BACK arrow                                      🔙
-ON! arrow                                       🔛
-TOP arrow                                       🔝
-SOON arrow                                      🔜
-heavy check mark                               ✔️
-ballot box with check                          ☑️
-radio button                                    🔘
-white circle                                   ⚪️
-black circle                                   ⚫️
-red circle                                      🔴
-blue circle                                     🔵
-red triangle pointed up                         🔺
-red triangle pointed down                       🔻
-small orange diamond                            🔸
-small blue diamond                              🔹
-large orange diamond                            🔶
-large blue diamond                              🔷
-white square button                             🔳
-black square button                             🔲
-black small square                             ▪️
-white small square                             ▫️
-black medium-small square                      ◾️
-white medium-small square                      ◽️
-black medium square                            ◼️
-white medium square                            ◻️
-black large square                             ⬛️
-white large square                             ⬜️
-speaker low volume                              🔈
-muted speaker                                   🔇
-speaker medium volume                           🔉
-speaker high volume                             🔊
-bell                                            🔔
-bell with slash                                 🔕
-megaphone                                       📣
-loudspeaker                                     📢
-eye in speech bubble                          👁‍🗨
-speech balloon                                  💬
-thought balloon                                 💭
-right anger bubble                              🗯
-spade suit                                     ♠️
-club suit                                      ♣️
-heart suit                                     ♥️
-diamond suit                                   ♦️
-joker                                           🃏
-flower playing cards                            🎴
-mahjong red dragon                             🀄️
-one o’clock                                     🕐
-two o’clock                                     🕑
-three o’clock                                   🕒
-four o’clock                                    🕓
-five o’clock                                    🕔
-six o’clock                                     🕕
-seven o’clock                                   🕖
-eight o’clock                                   🕗
-nine o’clock                                    🕘
-ten o’clock                                     🕙
-eleven o’clock                                  🕚
-twelve o’clock                                  🕛
-one-thirty                                      🕜
-two-thirty                                      🕝
-three-thirty                                    🕞
-four-thirty                                     🕟
-five-thirty                                     🕠
-six-thirty                                      🕡
-seven-thirty                                    🕢
-eight-thirty                                    🕣
-nine-thirty                                     🕤
-ten-thirty                                      🕥
-eleven-thirty                                   🕦
-twelve-thirty                                   🕧
-white flag                                     🏳️
-black flag                                      🏴
-chequered flag                                  🏁
-triangular flag                                 🚩
-rainbow flag                                 🏳️‍🌈
-Afghanistan                                    🇦🇫
-Åland Islands                                  🇦🇽
-Albania                                        🇦🇱
-Algeria                                        🇩🇿
-American Samoa                                 🇦🇸
-Andorra                                        🇦🇩
-Angola                                         🇦🇴
-Anguilla                                       🇦🇮
-Antarctica                                     🇦🇶
-Antigua & Barbuda                              🇦🇬
-Argentina                                      🇦🇷
-Armenia                                        🇦🇲
-Aruba                                          🇦🇼
-Australia                                      🇦🇺
-Austria                                        🇦🇹
-Azerbaijan                                     🇦🇿
-Bahamas                                        🇧🇸
-Bahrain                                        🇧🇭
-Bangladesh                                     🇧🇩
-Barbados                                       🇧🇧
-Belarus                                        🇧🇾
-Belgium                                        🇧🇪
-Belize                                         🇧🇿
-Benin                                          🇧🇯
-Bermuda                                        🇧🇲
-Bhutan                                         🇧🇹
-Bolivia                                        🇧🇴
-Caribbean Netherlands                          🇧🇶
-Bosnia & Herzegovina                           🇧🇦
-Botswana                                       🇧🇼
-Brazil                                         🇧🇷
-British Indian Ocean Territory                 🇮🇴
-British Virgin Islands                         🇻🇬
-Brunei                                         🇧🇳
-Bulgaria                                       🇧🇬
-Burkina Faso                                   🇧🇫
-Burundi                                        🇧🇮
-Cape Verde                                     🇨🇻
-Cambodia                                       🇰🇭
-Cameroon                                       🇨🇲
-Canada                                         🇨🇦
-Canary Islands                                 🇮🇨
-Cayman Islands                                 🇰🇾
-Central African Republic                       🇨🇫
-Chad                                           🇹🇩
-Chile                                          🇨🇱
-China                                          🇨🇳
-Christmas Island                               🇨🇽
-Cocos (Keeling) Islands                        🇨🇨
-Colombia                                       🇨🇴
-Comoros                                        🇰🇲
-Congo - Brazzaville                            🇨🇬
-Congo - Kinshasa                               🇨🇩
-Cook Islands                                   🇨🇰
-Costa Rica                                     🇨🇷
-Côte d’Ivoire                                  🇨🇮
-Croatia                                        🇭🇷
-Cuba                                           🇨🇺
-Curaçao                                        🇨🇼
-Cyprus                                         🇨🇾
-Czech Republic                                 🇨🇿
-Denmark                                        🇩🇰
-Djibouti                                       🇩🇯
-Dominica                                       🇩🇲
-Dominican Republic                             🇩🇴
-Ecuador                                        🇪🇨
-Egypt                                          🇪🇬
-El Salvador                                    🇸🇻
-Equatorial Guinea                              🇬🇶
-Eritrea                                        🇪🇷
-Estonia                                        🇪🇪
-Ethiopia                                       🇪🇹
-European Union                                 🇪🇺
-Falkland Islands                               🇫🇰
-Faroe Islands                                  🇫🇴
-Fiji                                           🇫🇯
-Finland                                        🇫🇮
-France                                         🇫🇷
-French Guiana                                  🇬🇫
-French Polynesia                               🇵🇫
-French Southern Territories                    🇹🇫
-Gabon                                          🇬🇦
-Gambia                                         🇬🇲
-Georgia                                        🇬🇪
-Germany                                        🇩🇪
-Ghana                                          🇬🇭
-Gibraltar                                      🇬🇮
-Greece                                         🇬🇷
-Greenland                                      🇬🇱
-Grenada                                        🇬🇩
-Guadeloupe                                     🇬🇵
-Guam                                           🇬🇺
-Guatemala                                      🇬🇹
-Guernsey                                       🇬🇬
-Guinea                                         🇬🇳
-Guinea-Bissau                                  🇬🇼
-Guyana                                         🇬🇾
-Haiti                                          🇭🇹
-Honduras                                       🇭🇳
-Hong Kong SAR China                            🇭🇰
-Hungary                                        🇭🇺
-Iceland                                        🇮🇸
-India                                          🇮🇳
-Indonesia                                      🇮🇩
-Iran                                           🇮🇷
-Iraq                                           🇮🇶
-Ireland                                        🇮🇪
-Isle of Man                                    🇮🇲
-Israel                                         🇮🇱
-Italy                                          🇮🇹
-Jamaica                                        🇯🇲
-Japan                                          🇯🇵
-crossed flags                                   🎌
-Jersey                                         🇯🇪
-Jordan                                         🇯🇴
-Kazakhstan                                     🇰🇿
-Kenya                                          🇰🇪
-Kiribati                                       🇰🇮
-Kosovo                                         🇽🇰
-Kuwait                                         🇰🇼
-Kyrgyzstan                                     🇰🇬
-Laos                                           🇱🇦
-Latvia                                         🇱🇻
-Lebanon                                        🇱🇧
-Lesotho                                        🇱🇸
-Liberia                                        🇱🇷
-Libya                                          🇱🇾
-Liechtenstein                                  🇱🇮
-Lithuania                                      🇱🇹
-Luxembourg                                     🇱🇺
-Macau SAR China                                🇲🇴
-Macedonia                                      🇲🇰
-Madagascar                                     🇲🇬
-Malawi                                         🇲🇼
-Malaysia                                       🇲🇾
-Maldives                                       🇲🇻
-Mali                                           🇲🇱
-Malta                                          🇲🇹
-Marshall Islands                               🇲🇭
-Martinique                                     🇲🇶
-Mauritania                                     🇲🇷
-Mauritius                                      🇲🇺
-Mayotte                                        🇾🇹
-Mexico                                         🇲🇽
-Micronesia                                     🇫🇲
-Moldova                                        🇲🇩
-Monaco                                         🇲🇨
-Mongolia                                       🇲🇳
-Montenegro                                     🇲🇪
-Montserrat                                     🇲🇸
-Morocco                                        🇲🇦
-Mozambique                                     🇲🇿
-Myanmar (Burma)                                🇲🇲
-Namibia                                        🇳🇦
-Nauru                                          🇳🇷
-Nepal                                          🇳🇵
-Netherlands                                    🇳🇱
-New Caledonia                                  🇳🇨
-New Zealand                                    🇳🇿
-Nicaragua                                      🇳🇮
-Niger                                          🇳🇪
-Nigeria                                        🇳🇬
-Niue                                           🇳🇺
-Norfolk Island                                 🇳🇫
-Northern Mariana Islands                       🇲🇵
-North Korea                                    🇰🇵
-Norway                                         🇳🇴
-Oman                                           🇴🇲
-Pakistan                                       🇵🇰
-Palau                                          🇵🇼
-Palestinian Territories                        🇵🇸
-Panama                                         🇵🇦
-Papua New Guinea                               🇵🇬
-Paraguay                                       🇵🇾
-Peru                                           🇵🇪
-Philippines                                    🇵🇭
-Pitcairn Islands                               🇵🇳
-Poland                                         🇵🇱
-Portugal                                       🇵🇹
-Puerto Rico                                    🇵🇷
-Qatar                                          🇶🇦
-Réunion                                        🇷🇪
-Romania                                        🇷🇴
-Russia                                         🇷🇺
-Rwanda                                         🇷🇼
-St. Barthélemy                                 🇧🇱
-St. Helena                                     🇸🇭
-St. Kitts & Nevis                              🇰🇳
-St. Lucia                                      🇱🇨
-St. Pierre & Miquelon                          🇵🇲
-St. Vincent & Grenadines                       🇻🇨
-Samoa                                          🇼🇸
-San Marino                                     🇸🇲
-São Tomé & Príncipe                            🇸🇹
-Saudi Arabia                                   🇸🇦
-Senegal                                        🇸🇳
-Serbia                                         🇷🇸
-Seychelles                                     🇸🇨
-Sierra Leone                                   🇸🇱
-Singapore                                      🇸🇬
-Sint Maarten                                   🇸🇽
-Slovakia                                       🇸🇰
-Slovenia                                       🇸🇮
-Solomon Islands                                🇸🇧
-Somalia                                        🇸🇴
-South Africa                                   🇿🇦
-South Georgia & South Sandwich Islands         🇬🇸
-South Korea                                    🇰🇷
-South Sudan                                    🇸🇸
-Spain                                          🇪🇸
-Sri Lanka                                      🇱🇰
-Sudan                                          🇸🇩
-Suriname                                       🇸🇷
-Swaziland                                      🇸🇿
-Sweden                                         🇸🇪
-Switzerland                                    🇨🇭
-Syria                                          🇸🇾
-Taiwan                                         🇹🇼
-Tajikistan                                     🇹🇯
-Tanzania                                       🇹🇿
-Thailand                                       🇹🇭
-Timor-Leste                                    🇹🇱
-Togo                                           🇹🇬
-Tokelau                                        🇹🇰
-Tonga                                          🇹🇴
-Trinidad & Tobago                              🇹🇹
-Tunisia                                        🇹🇳
-Turkey                                         🇹🇷
-Turkmenistan                                   🇹🇲
-Turks & Caicos Islands                         🇹🇨
-Tuvalu                                         🇹🇻
-Uganda                                         🇺🇬
-Ukraine                                        🇺🇦
-United Arab Emirates                           🇦🇪
-United Kingdom                                 🇬🇧
-United States                                  🇺🇸
-U.S. Virgin Islands                            🇻🇮
-Uruguay                                        🇺🇾
-Uzbekistan                                     🇺🇿
-Vanuatu                                        🇻🇺
-Vatican City                                   🇻🇦
-Venezuela                                      🇻🇪
-Vietnam                                        🇻🇳
-Wallis & Futuna                                🇼🇫
-Western Sahara                                 🇪🇭
-Yemen                                          🇾🇪
-Zambia                                         🇿🇲
-Zimbabwe                                       🇿🇼
+😀    grinning face
+😃    grinning face with big eyes
+😄    grinning face with smiling eyes
+😁    beaming face with smiling eyes
+😆    grinning squinting face
+😅    grinning face with sweat
+🤣    rolling on the floor laughing
+😂    face with tears of joy
+🙂    slightly smiling face
+🙃    upside-down face
+😉    winking face
+😊    smiling face with smiling eyes
+😇    smiling face with halo
+🥰    ⊛ smiling face with hearts
+😍    smiling face with heart-eyes
+🤩    star-struck
+😘    face blowing a kiss
+😗    kissing face
+☺    smiling face
+😚    kissing face with closed eyes
+😙    kissing face with smiling eyes
+😋    face savoring food
+😛    face with tongue
+😜    winking face with tongue
+🤪    zany face
+😝    squinting face with tongue
+🤑    money-mouth face
+🤗    hugging face
+🤭    face with hand over mouth
+🤫    shushing face
+🤔    thinking face
+🤐    zipper-mouth face
+🤨    face with raised eyebrow
+😐    neutral face
+😑    expressionless face
+😶    face without mouth
+😏    smirking face
+😒    unamused face
+🙄    face with rolling eyes
+😬    grimacing face
+🤥    lying face
+😌    relieved face
+😔    pensive face
+😪    sleepy face
+🤤    drooling face
+😴    sleeping face
+😷    face with medical mask
+🤒    face with thermometer
+🤕    face with head-bandage
+🤢    nauseated face
+🤮    face vomiting
+🤧    sneezing face
+🥵    ⊛ hot face
+🥶    ⊛ cold face
+🥴    ⊛ woozy face
+😵    dizzy face
+🤯    exploding head
+🤠    cowboy hat face
+🥳    ⊛ partying face
+😎    smiling face with sunglasses
+🤓    nerd face
+🧐    face with monocle
+😕    confused face
+😟    worried face
+🙁    slightly frowning face
+☹    frowning face
+😮    face with open mouth
+😯    hushed face
+😲    astonished face
+😳    flushed face
+🥺    ⊛ pleading face
+😦    frowning face with open mouth
+😧    anguished face
+😨    fearful face
+😰    anxious face with sweat
+😥    sad but relieved face
+😢    crying face
+😭    loudly crying face
+😱    face screaming in fear
+😖    confounded face
+😣    persevering face
+😞    disappointed face
+😓    downcast face with sweat
+😩    weary face
+😫    tired face
+😤    face with steam from nose
+😡    pouting face
+😠    angry face
+🤬    face with symbols on mouth
+😈    smiling face with horns
+👿    angry face with horns
+💀    skull
+☠    skull and crossbones
+💩    pile of poo
+🤡    clown face
+👹    ogre
+👺    goblin
+👻    ghost
+👽    alien
+👾    alien monster
+🤖    robot
+😺    grinning cat
+😸    grinning cat with smiling eyes
+😹    cat with tears of joy
+😻    smiling cat with heart-eyes
+😼    cat with wry smile
+😽    kissing cat
+🙀    weary cat
+😿    crying cat
+😾    pouting cat
+🙈    see-no-evil monkey
+🙉    hear-no-evil monkey
+🙊    speak-no-evil monkey
+💋    kiss mark
+💌    love letter
+💘    heart with arrow
+💝    heart with ribbon
+💖    sparkling heart
+💗    growing heart
+💓    beating heart
+💞    revolving hearts
+💕    two hearts
+💟    heart decoration
+❣    heart exclamation
+💔    broken heart
+❤    red heart
+🧡    orange heart
+💛    yellow heart
+💚    green heart
+💙    blue heart
+💜    purple heart
+🖤    black heart
+💯    hundred points
+💢    anger symbol
+💥    collision
+💫    dizzy
+💦    sweat droplets
+💨    dashing away
+🕳    hole
+💣    bomb
+💬    speech balloon
+👁️‍🗨️    eye in speech bubble
+🗨    left speech bubble
+🗯    right anger bubble
+💭    thought balloon
+💤    zzz
+👋    waving hand
+🤚    raised back of hand
+🖐    hand with fingers splayed
+✋    raised hand
+🖖    vulcan salute
+👌    OK hand
+✌    victory hand
+🤞    crossed fingers
+🤟    love-you gesture
+🤘    sign of the horns
+🤙    call me hand
+👈    backhand index pointing left
+👉    backhand index pointing right
+👆    backhand index pointing up
+🖕    middle finger
+👇    backhand index pointing down
+☝    index pointing up
+👍    thumbs up
+👎    thumbs down
+✊    raised fist
+👊    oncoming fist
+🤛    left-facing fist
+🤜    right-facing fist
+👏    clapping hands
+🙌    raising hands
+👐    open hands
+🤲    palms up together
+🤝    handshake
+🙏    folded hands
+✍    writing hand
+💅    nail polish
+🤳    selfie
+💪    flexed biceps
+🦵    ⊛ leg
+🦶    ⊛ foot
+👂    ear
+👃    nose
+🧠    brain
+🦷    ⊛ tooth
+🦴    ⊛ bone
+👀    eyes
+👁    eye
+👅    tongue
+👄    mouth
+👶    baby
+🧒    child
+👦    boy
+👧    girl
+🧑    person
+👱    person: blond hair
+👨    man
+🧔    man: beard
+👱‍♂️    man: blond hair
+👨‍🦰    ⊛ man: red hair
+👨‍🦱    ⊛ man: curly hair
+👨‍🦳    ⊛ man: white hair
+👨‍🦲    ⊛ man: bald
+👩    woman
+👱‍♀️    woman: blond hair
+👩‍🦰    ⊛ woman: red hair
+👩‍🦱    ⊛ woman: curly hair
+👩‍🦳    ⊛ woman: white hair
+👩‍🦲    ⊛ woman: bald
+🧓    older person
+👴    old man
+👵    old woman
+🙍    person frowning
+🙍‍♂️    man frowning
+🙍‍♀️    woman frowning
+🙎    person pouting
+🙎‍♂️    man pouting
+🙎‍♀️    woman pouting
+🙅    person gesturing NO
+🙅‍♂️    man gesturing NO
+🙅‍♀️    woman gesturing NO
+🙆    person gesturing OK
+🙆‍♂️    man gesturing OK
+🙆‍♀️    woman gesturing OK
+💁    person tipping hand
+💁‍♂️    man tipping hand
+💁‍♀️    woman tipping hand
+🙋    person raising hand
+🙋‍♂️    man raising hand
+🙋‍♀️    woman raising hand
+🙇    person bowing
+🙇‍♂️    man bowing
+🙇‍♀️    woman bowing
+🤦    person facepalming
+🤦‍♂️    man facepalming
+🤦‍♀️    woman facepalming
+🤷    person shrugging
+🤷‍♂️    man shrugging
+🤷‍♀️    woman shrugging
+👨‍⚕️    man health worker
+👩‍⚕️    woman health worker
+👨‍🎓    man student
+👩‍🎓    woman student
+👨‍🏫    man teacher
+👩‍🏫    woman teacher
+👨‍⚖️    man judge
+👩‍⚖️    woman judge
+👨‍🌾    man farmer
+👩‍🌾    woman farmer
+👨‍🍳    man cook
+👩‍🍳    woman cook
+👨‍🔧    man mechanic
+👩‍🔧    woman mechanic
+👨‍🏭    man factory worker
+👩‍🏭    woman factory worker
+👨‍💼    man office worker
+👩‍💼    woman office worker
+👨‍🔬    man scientist
+👩‍🔬    woman scientist
+👨‍💻    man technologist
+👩‍💻    woman technologist
+👨‍🎤    man singer
+👩‍🎤    woman singer
+👨‍🎨    man artist
+👩‍🎨    woman artist
+👨‍✈️    man pilot
+👩‍✈️    woman pilot
+👨‍🚀    man astronaut
+👩‍🚀    woman astronaut
+👨‍🚒    man firefighter
+👩‍🚒    woman firefighter
+👮    police officer
+👮‍♂️    man police officer
+👮‍♀️    woman police officer
+🕵    detective
+🕵️‍♂️    man detective
+🕵️‍♀️    woman detective
+💂    guard
+💂‍♂️    man guard
+💂‍♀️    woman guard
+👷    construction worker
+👷‍♂️    man construction worker
+👷‍♀️    woman construction worker
+🤴    prince
+👸    princess
+👳    person wearing turban
+👳‍♂️    man wearing turban
+👳‍♀️    woman wearing turban
+👲    man with Chinese cap
+🧕    woman with headscarf
+🤵    man in tuxedo
+👰    bride with veil
+🤰    pregnant woman
+🤱    breast-feeding
+👼    baby angel
+🎅    Santa Claus
+🤶    Mrs. Claus
+🦸    ⊛ superhero
+🦸‍♂️    ⊛ man superhero
+🦸‍♀️    ⊛ woman superhero
+🦹    ⊛ supervillain
+🦹‍♂️    ⊛ man supervillain
+🦹‍♀️    ⊛ woman supervillain
+🧙    mage
+🧙‍♂️    man mage
+🧙‍♀️    woman mage
+🧚    fairy
+🧚‍♂️    man fairy
+🧚‍♀️    woman fairy
+🧛    vampire
+🧛‍♂️    man vampire
+🧛‍♀️    woman vampire
+🧜    merperson
+🧜‍♂️    merman
+🧜‍♀️    mermaid
+🧝    elf
+🧝‍♂️    man elf
+🧝‍♀️    woman elf
+🧞    genie
+🧞‍♂️    man genie
+🧞‍♀️    woman genie
+🧟    zombie
+🧟‍♂️    man zombie
+🧟‍♀️    woman zombie
+💆    person getting massage
+💆‍♂️    man getting massage
+💆‍♀️    woman getting massage
+💇    person getting haircut
+💇‍♂️    man getting haircut
+💇‍♀️    woman getting haircut
+🚶    person walking
+🚶‍♂️    man walking
+🚶‍♀️    woman walking
+🏃    person running
+🏃‍♂️    man running
+🏃‍♀️    woman running
+💃    woman dancing
+🕺    man dancing
+🕴    man in suit levitating
+👯    people with bunny ears
+👯‍♂️    men with bunny ears
+👯‍♀️    women with bunny ears
+🧖    person in steamy room
+🧖‍♂️    man in steamy room
+🧖‍♀️    woman in steamy room
+🧗    person climbing
+🧗‍♂️    man climbing
+🧗‍♀️    woman climbing
+🤺    person fencing
+🏇    horse racing
+⛷    skier
+🏂    snowboarder
+🏌    person golfing
+🏌️‍♂️    man golfing
+🏌️‍♀️    woman golfing
+🏄    person surfing
+🏄‍♂️    man surfing
+🏄‍♀️    woman surfing
+🚣    person rowing boat
+🚣‍♂️    man rowing boat
+🚣‍♀️    woman rowing boat
+🏊    person swimming
+🏊‍♂️    man swimming
+🏊‍♀️    woman swimming
+⛹    person bouncing ball
+⛹️‍♂️    man bouncing ball
+⛹️‍♀️    woman bouncing ball
+🏋    person lifting weights
+🏋️‍♂️    man lifting weights
+🏋️‍♀️    woman lifting weights
+🚴    person biking
+🚴‍♂️    man biking
+🚴‍♀️    woman biking
+🚵    person mountain biking
+🚵‍♂️    man mountain biking
+🚵‍♀️    woman mountain biking
+🤸    person cartwheeling
+🤸‍♂️    man cartwheeling
+🤸‍♀️    woman cartwheeling
+🤼    people wrestling
+🤼‍♂️    men wrestling
+🤼‍♀️    women wrestling
+🤽    person playing water polo
+🤽‍♂️    man playing water polo
+🤽‍♀️    woman playing water polo
+🤾    person playing handball
+🤾‍♂️    man playing handball
+🤾‍♀️    woman playing handball
+🤹    person juggling
+🤹‍♂️    man juggling
+🤹‍♀️    woman juggling
+🧘    person in lotus position
+🧘‍♂️    man in lotus position
+🧘‍♀️    woman in lotus position
+🛀    person taking bath
+🛌    person in bed
+👭    women holding hands
+👫    woman and man holding hands
+👬    men holding hands
+💏    kiss
+👩‍❤️‍💋‍👨    kiss: woman, man
+👨‍❤️‍💋‍👨    kiss: man, man
+👩‍❤️‍💋‍👩    kiss: woman, woman
+💑    couple with heart
+👩‍❤️‍👨    couple with heart: woman, man
+👨‍❤️‍👨    couple with heart: man, man
+👩‍❤️‍👩    couple with heart: woman, woman
+👪    family
+👨‍👩‍👦    family: man, woman, boy
+👨‍👩‍👧    family: man, woman, girl
+👨‍👩‍👧‍👦    family: man, woman, girl, boy
+👨‍👩‍👦‍👦    family: man, woman, boy, boy
+👨‍👩‍👧‍👧    family: man, woman, girl, girl
+👨‍👨‍👦    family: man, man, boy
+👨‍👨‍👧    family: man, man, girl
+👨‍👨‍👧‍👦    family: man, man, girl, boy
+👨‍👨‍👦‍👦    family: man, man, boy, boy
+👨‍👨‍👧‍👧    family: man, man, girl, girl
+👩‍👩‍👦    family: woman, woman, boy
+👩‍👩‍👧    family: woman, woman, girl
+👩‍👩‍👧‍👦    family: woman, woman, girl, boy
+👩‍👩‍👦‍👦    family: woman, woman, boy, boy
+👩‍👩‍👧‍👧    family: woman, woman, girl, girl
+👨‍👦    family: man, boy
+👨‍👦‍👦    family: man, boy, boy
+👨‍👧    family: man, girl
+👨‍👧‍👦    family: man, girl, boy
+👨‍👧‍👧    family: man, girl, girl
+👩‍👦    family: woman, boy
+👩‍👦‍👦    family: woman, boy, boy
+👩‍👧    family: woman, girl
+👩‍👧‍👦    family: woman, girl, boy
+👩‍👧‍👧    family: woman, girl, girl
+🗣    speaking head
+👤    bust in silhouette
+👥    busts in silhouette
+👣    footprints
+🦰    ⊛ red hair
+🦱    ⊛ curly hair
+🦳    ⊛ white hair
+🦲    ⊛ bald
+🐵    monkey face
+🐒    monkey
+🦍    gorilla
+🐶    dog face
+🐕    dog
+🐩    poodle
+🐺    wolf
+🦊    fox
+🦝    ⊛ raccoon
+🐱    cat face
+🐈    cat
+🦁    lion
+🐯    tiger face
+🐅    tiger
+🐆    leopard
+🐴    horse face
+🐎    horse
+🦄    unicorn
+🦓    zebra
+🦌    deer
+🐮    cow face
+🐂    ox
+🐃    water buffalo
+🐄    cow
+🐷    pig face
+🐖    pig
+🐗    boar
+🐽    pig nose
+🐏    ram
+🐑    ewe
+🐐    goat
+🐪    camel
+🐫    two-hump camel
+🦙    ⊛ llama
+🦒    giraffe
+🐘    elephant
+🦏    rhinoceros
+🦛    ⊛ hippopotamus
+🐭    mouse face
+🐁    mouse
+🐀    rat
+🐹    hamster
+🐰    rabbit face
+🐇    rabbit
+🐿    chipmunk
+🦔    hedgehog
+🦇    bat
+🐻    bear
+🐨    koala
+🐼    panda
+🦘    ⊛ kangaroo
+🦡    ⊛ badger
+🐾    paw prints
+🦃    turkey
+🐔    chicken
+🐓    rooster
+🐣    hatching chick
+🐤    baby chick
+🐥    front-facing baby chick
+🐦    bird
+🐧    penguin
+🕊    dove
+🦅    eagle
+🦆    duck
+🦢    ⊛ swan
+🦉    owl
+🦚    ⊛ peacock
+🦜    ⊛ parrot
+🐸    frog
+🐊    crocodile
+🐢    turtle
+🦎    lizard
+🐍    snake
+🐲    dragon face
+🐉    dragon
+🦕    sauropod
+🦖    T-Rex
+🐳    spouting whale
+🐋    whale
+🐬    dolphin
+🐟    fish
+🐠    tropical fish
+🐡    blowfish
+🦈    shark
+🐙    octopus
+🐚    spiral shell
+🐌    snail
+🦋    butterfly
+🐛    bug
+🐜    ant
+🐝    honeybee
+🐞    lady beetle
+🦗    cricket
+🕷    spider
+🕸    spider web
+🦂    scorpion
+🦟    ⊛ mosquito
+🦠    ⊛ microbe
+💐    bouquet
+🌸    cherry blossom
+💮    white flower
+🏵    rosette
+🌹    rose
+🥀    wilted flower
+🌺    hibiscus
+🌻    sunflower
+🌼    blossom
+🌷    tulip
+🌱    seedling
+🌲    evergreen tree
+🌳    deciduous tree
+🌴    palm tree
+🌵    cactus
+🌾    sheaf of rice
+🌿    herb
+☘    shamrock
+🍀    four leaf clover
+🍁    maple leaf
+🍂    fallen leaf
+🍃    leaf fluttering in wind
+🍇    grapes
+🍈    melon
+🍉    watermelon
+🍊    tangerine
+🍋    lemon
+🍌    banana
+🍍    pineapple
+🥭    ⊛ mango
+🍎    red apple
+🍏    green apple
+🍐    pear
+🍑    peach
+🍒    cherries
+🍓    strawberry
+🥝    kiwi fruit
+🍅    tomato
+🥥    coconut
+🥑    avocado
+🍆    eggplant
+🥔    potato
+🥕    carrot
+🌽    ear of corn
+🌶    hot pepper
+🥒    cucumber
+🥬    ⊛ leafy green
+🥦    broccoli
+🍄    mushroom
+🥜    peanuts
+🌰    chestnut
+🍞    bread
+🥐    croissant
+🥖    baguette bread
+🥨    pretzel
+🥯    ⊛ bagel
+🥞    pancakes
+🧀    cheese wedge
+🍖    meat on bone
+🍗    poultry leg
+🥩    cut of meat
+🥓    bacon
+🍔    hamburger
+🍟    french fries
+🍕    pizza
+🌭    hot dog
+🥪    sandwich
+🌮    taco
+🌯    burrito
+🥙    stuffed flatbread
+🥚    egg
+🍳    cooking
+🥘    shallow pan of food
+🍲    pot of food
+🥣    bowl with spoon
+🥗    green salad
+🍿    popcorn
+🧂    ⊛ salt
+🥫    canned food
+🍱    bento box
+🍘    rice cracker
+🍙    rice ball
+🍚    cooked rice
+🍛    curry rice
+🍜    steaming bowl
+🍝    spaghetti
+🍠    roasted sweet potato
+🍢    oden
+🍣    sushi
+🍤    fried shrimp
+🍥    fish cake with swirl
+🥮    ⊛ moon cake
+🍡    dango
+🥟    dumpling
+🥠    fortune cookie
+🥡    takeout box
+🦀    crab
+🦞    ⊛ lobster
+🦐    shrimp
+🦑    squid
+🍦    soft ice cream
+🍧    shaved ice
+🍨    ice cream
+🍩    doughnut
+🍪    cookie
+🎂    birthday cake
+🍰    shortcake
+🧁    ⊛ cupcake
+🥧    pie
+🍫    chocolate bar
+🍬    candy
+🍭    lollipop
+🍮    custard
+🍯    honey pot
+🍼    baby bottle
+🥛    glass of milk
+☕    hot beverage
+🍵    teacup without handle
+🍶    sake
+🍾    bottle with popping cork
+🍷    wine glass
+🍸    cocktail glass
+🍹    tropical drink
+🍺    beer mug
+🍻    clinking beer mugs
+🥂    clinking glasses
+🥃    tumbler glass
+🥤    cup with straw
+🥢    chopsticks
+🍽    fork and knife with plate
+🍴    fork and knife
+🥄    spoon
+🔪    kitchen knife
+🏺    amphora
+🌍    globe showing Europe-Africa
+🌎    globe showing Americas
+🌏    globe showing Asia-Australia
+🌐    globe with meridians
+🗺    world map
+🗾    map of Japan
+🧭    ⊛ compass
+🏔    snow-capped mountain
+⛰    mountain
+🌋    volcano
+🗻    mount fuji
+🏕    camping
+🏖    beach with umbrella
+🏜    desert
+🏝    desert island
+🏞    national park
+🏟    stadium
+🏛    classical building
+🏗    building construction
+🧱    ⊛ brick
+🏘    houses
+🏚    derelict house
+🏠    house
+🏡    house with garden
+🏢    office building
+🏣    Japanese post office
+🏤    post office
+🏥    hospital
+🏦    bank
+🏨    hotel
+🏩    love hotel
+🏪    convenience store
+🏫    school
+🏬    department store
+🏭    factory
+🏯    Japanese castle
+🏰    castle
+💒    wedding
+🗼    Tokyo tower
+🗽    Statue of Liberty
+⛪    church
+🕌    mosque
+🕍    synagogue
+⛩    shinto shrine
+🕋    kaaba
+⛲    fountain
+⛺    tent
+🌁    foggy
+🌃    night with stars
+🏙    cityscape
+🌄    sunrise over mountains
+🌅    sunrise
+🌆    cityscape at dusk
+🌇    sunset
+🌉    bridge at night
+♨    hot springs
+🌌    milky way
+🎠    carousel horse
+🎡    ferris wheel
+🎢    roller coaster
+💈    barber pole
+🎪    circus tent
+🚂    locomotive
+🚃    railway car
+🚄    high-speed train
+🚅    bullet train
+🚆    train
+🚇    metro
+🚈    light rail
+🚉    station
+🚊    tram
+🚝    monorail
+🚞    mountain railway
+🚋    tram car
+🚌    bus
+🚍    oncoming bus
+🚎    trolleybus
+🚐    minibus
+🚑    ambulance
+🚒    fire engine
+🚓    police car
+🚔    oncoming police car
+🚕    taxi
+🚖    oncoming taxi
+🚗    automobile
+🚘    oncoming automobile
+🚙    sport utility vehicle
+🚚    delivery truck
+🚛    articulated lorry
+🚜    tractor
+🏎    racing car
+🏍    motorcycle
+🛵    motor scooter
+🚲    bicycle
+🛴    kick scooter
+🛹    ⊛ skateboard
+🚏    bus stop
+🛣    motorway
+🛤    railway track
+🛢    oil drum
+⛽    fuel pump
+🚨    police car light
+🚥    horizontal traffic light
+🚦    vertical traffic light
+🛑    stop sign
+🚧    construction
+⚓    anchor
+⛵    sailboat
+🛶    canoe
+🚤    speedboat
+🛳    passenger ship
+⛴    ferry
+🛥    motor boat
+🚢    ship
+✈    airplane
+🛩    small airplane
+🛫    airplane departure
+🛬    airplane arrival
+💺    seat
+🚁    helicopter
+🚟    suspension railway
+🚠    mountain cableway
+🚡    aerial tramway
+🛰    satellite
+🚀    rocket
+🛸    flying saucer
+🛎    bellhop bell
+🧳    ⊛ luggage
+⌛    hourglass done
+⏳    hourglass not done
+⌚    watch
+⏰    alarm clock
+⏱    stopwatch
+⏲    timer clock
+🕰    mantelpiece clock
+🕛    twelve o’clock
+🕧    twelve-thirty
+🕐    one o’clock
+🕜    one-thirty
+🕑    two o’clock
+🕝    two-thirty
+🕒    three o’clock
+🕞    three-thirty
+🕓    four o’clock
+🕟    four-thirty
+🕔    five o’clock
+🕠    five-thirty
+🕕    six o’clock
+🕡    six-thirty
+🕖    seven o’clock
+🕢    seven-thirty
+🕗    eight o’clock
+🕣    eight-thirty
+🕘    nine o’clock
+🕤    nine-thirty
+🕙    ten o’clock
+🕥    ten-thirty
+🕚    eleven o’clock
+🕦    eleven-thirty
+🌑    new moon
+🌒    waxing crescent moon
+🌓    first quarter moon
+🌔    waxing gibbous moon
+🌕    full moon
+🌖    waning gibbous moon
+🌗    last quarter moon
+🌘    waning crescent moon
+🌙    crescent moon
+🌚    new moon face
+🌛    first quarter moon face
+🌜    last quarter moon face
+🌡    thermometer
+☀    sun
+🌝    full moon face
+🌞    sun with face
+⭐    star
+🌟    glowing star
+🌠    shooting star
+☁    cloud
+⛅    sun behind cloud
+⛈    cloud with lightning and rain
+🌤    sun behind small cloud
+🌥    sun behind large cloud
+🌦    sun behind rain cloud
+🌧    cloud with rain
+🌨    cloud with snow
+🌩    cloud with lightning
+🌪    tornado
+🌫    fog
+🌬    wind face
+🌀    cyclone
+🌈    rainbow
+🌂    closed umbrella
+☂    umbrella
+☔    umbrella with rain drops
+⛱    umbrella on ground
+⚡    high voltage
+❄    snowflake
+☃    snowman
+⛄    snowman without snow
+☄    comet
+🔥    fire
+💧    droplet
+🌊    water wave
+🎃    jack-o-lantern
+🎄    Christmas tree
+🎆    fireworks
+🎇    sparkler
+🧨    ⊛ firecracker
+✨    sparkles
+🎈    balloon
+🎉    party popper
+🎊    confetti ball
+🎋    tanabata tree
+🎍    pine decoration
+🎎    Japanese dolls
+🎏    carp streamer
+🎐    wind chime
+🎑    moon viewing ceremony
+🧧    ⊛ red envelope
+🎀    ribbon
+🎁    wrapped gift
+🎗    reminder ribbon
+🎟    admission tickets
+🎫    ticket
+🎖    military medal
+🏆    trophy
+🏅    sports medal
+🥇    1st place medal
+🥈    2nd place medal
+🥉    3rd place medal
+⚽    soccer ball
+⚾    baseball
+🥎    ⊛ softball
+🏀    basketball
+🏐    volleyball
+🏈    american football
+🏉    rugby football
+🎾    tennis
+🥏    ⊛ flying disc
+🎳    bowling
+🏏    cricket game
+🏑    field hockey
+🏒    ice hockey
+🥍    ⊛ lacrosse
+🏓    ping pong
+🏸    badminton
+🥊    boxing glove
+🥋    martial arts uniform
+🥅    goal net
+⛳    flag in hole
+⛸    ice skate
+🎣    fishing pole
+🎽    running shirt
+🎿    skis
+🛷    sled
+🥌    curling stone
+🎯    direct hit
+🎱    pool 8 ball
+🔮    crystal ball
+🧿    ⊛ nazar amulet
+🎮    video game
+🕹    joystick
+🎰    slot machine
+🎲    game die
+🧩    ⊛ puzzle piece
+🧸    ⊛ teddy bear
+♠    spade suit
+♥    heart suit
+♦    diamond suit
+♣    club suit
+♟    ⊛ chess pawn
+🃏    joker
+🀄    mahjong red dragon
+🎴    flower playing cards
+🎭    performing arts
+🖼    framed picture
+🎨    artist palette
+🧵    ⊛ thread
+🧶    ⊛ yarn
+👓    glasses
+🕶    sunglasses
+🥽    ⊛ goggles
+🥼    ⊛ lab coat
+👔    necktie
+👕    t-shirt
+👖    jeans
+🧣    scarf
+🧤    gloves
+🧥    coat
+🧦    socks
+👗    dress
+👘    kimono
+👙    bikini
+👚    woman’s clothes
+👛    purse
+👜    handbag
+👝    clutch bag
+🛍    shopping bags
+🎒    backpack
+👞    man’s shoe
+👟    running shoe
+🥾    ⊛ hiking boot
+🥿    ⊛ flat shoe
+👠    high-heeled shoe
+👡    woman’s sandal
+👢    woman’s boot
+👑    crown
+👒    woman’s hat
+🎩    top hat
+🎓    graduation cap
+🧢    billed cap
+⛑    rescue worker’s helmet
+📿    prayer beads
+💄    lipstick
+💍    ring
+💎    gem stone
+🔇    muted speaker
+🔈    speaker low volume
+🔉    speaker medium volume
+🔊    speaker high volume
+📢    loudspeaker
+📣    megaphone
+📯    postal horn
+🔔    bell
+🔕    bell with slash
+🎼    musical score
+🎵    musical note
+🎶    musical notes
+🎙    studio microphone
+🎚    level slider
+🎛    control knobs
+🎤    microphone
+🎧    headphone
+📻    radio
+🎷    saxophone
+🎸    guitar
+🎹    musical keyboard
+🎺    trumpet
+🎻    violin
+🥁    drum
+📱    mobile phone
+📲    mobile phone with arrow
+☎    telephone
+📞    telephone receiver
+📟    pager
+📠    fax machine
+🔋    battery
+🔌    electric plug
+💻    laptop computer
+🖥    desktop computer
+🖨    printer
+⌨    keyboard
+🖱    computer mouse
+🖲    trackball
+💽    computer disk
+💾    floppy disk
+💿    optical disk
+📀    dvd
+🧮    ⊛ abacus
+🎥    movie camera
+🎞    film frames
+📽    film projector
+🎬    clapper board
+📺    television
+📷    camera
+📸    camera with flash
+📹    video camera
+📼    videocassette
+🔍    magnifying glass tilted left
+🔎    magnifying glass tilted right
+🕯    candle
+💡    light bulb
+🔦    flashlight
+🏮    red paper lantern
+📔    notebook with decorative cover
+📕    closed book
+📖    open book
+📗    green book
+📘    blue book
+📙    orange book
+📚    books
+📓    notebook
+📒    ledger
+📃    page with curl
+📜    scroll
+📄    page facing up
+📰    newspaper
+🗞    rolled-up newspaper
+📑    bookmark tabs
+🔖    bookmark
+🏷    label
+💰    money bag
+💴    yen banknote
+💵    dollar banknote
+💶    euro banknote
+💷    pound banknote
+💸    money with wings
+💳    credit card
+🧾    ⊛ receipt
+💹    chart increasing with yen
+💱    currency exchange
+💲    heavy dollar sign
+✉    envelope
+📧    e-mail
+📨    incoming envelope
+📩    envelope with arrow
+📤    outbox tray
+📥    inbox tray
+📦    package
+📫    closed mailbox with raised flag
+📪    closed mailbox with lowered flag
+📬    open mailbox with raised flag
+📭    open mailbox with lowered flag
+📮    postbox
+🗳    ballot box with ballot
+✏    pencil
+✒    black nib
+🖋    fountain pen
+🖊    pen
+🖌    paintbrush
+🖍    crayon
+📝    memo
+💼    briefcase
+📁    file folder
+📂    open file folder
+🗂    card index dividers
+📅    calendar
+📆    tear-off calendar
+🗒    spiral notepad
+🗓    spiral calendar
+📇    card index
+📈    chart increasing
+📉    chart decreasing
+📊    bar chart
+📋    clipboard
+📌    pushpin
+📍    round pushpin
+📎    paperclip
+🖇    linked paperclips
+📏    straight ruler
+📐    triangular ruler
+✂    scissors
+🗃    card file box
+🗄    file cabinet
+🗑    wastebasket
+🔒    locked
+🔓    unlocked
+🔏    locked with pen
+🔐    locked with key
+🔑    key
+🗝    old key
+🔨    hammer
+⛏    pick
+⚒    hammer and pick
+🛠    hammer and wrench
+🗡    dagger
+⚔    crossed swords
+🔫    pistol
+🏹    bow and arrow
+🛡    shield
+🔧    wrench
+🔩    nut and bolt
+⚙    gear
+🗜    clamp
+⚖    balance scale
+🔗    link
+⛓    chains
+🧰    ⊛ toolbox
+🧲    ⊛ magnet
+⚗    alembic
+🧪    ⊛ test tube
+🧫    ⊛ petri dish
+🧬    ⊛ dna
+🔬    microscope
+🔭    telescope
+📡    satellite antenna
+💉    syringe
+💊    pill
+🚪    door
+🛏    bed
+🛋    couch and lamp
+🚽    toilet
+🚿    shower
+🛁    bathtub
+🧴    ⊛ lotion bottle
+🧷    ⊛ safety pin
+🧹    ⊛ broom
+🧺    ⊛ basket
+🧻    ⊛ roll of paper
+🧼    ⊛ soap
+🧽    ⊛ sponge
+🧯    ⊛ fire extinguisher
+🛒    shopping cart
+🚬    cigarette
+⚰    coffin
+⚱    funeral urn
+🗿    moai
+🏧    ATM sign
+🚮    litter in bin sign
+🚰    potable water
+♿    wheelchair symbol
+🚹    men’s room
+🚺    women’s room
+🚻    restroom
+🚼    baby symbol
+🚾    water closet
+🛂    passport control
+🛃    customs
+🛄    baggage claim
+🛅    left luggage
+⚠    warning
+🚸    children crossing
+⛔    no entry
+🚫    prohibited
+🚳    no bicycles
+🚭    no smoking
+🚯    no littering
+🚱    non-potable water
+🚷    no pedestrians
+📵    no mobile phones
+🔞    no one under eighteen
+☢    radioactive
+☣    biohazard
+⬆    up arrow
+↗    up-right arrow
+➡    right arrow
+↘    down-right arrow
+⬇    down arrow
+↙    down-left arrow
+⬅    left arrow
+↖    up-left arrow
+↕    up-down arrow
+↔    left-right arrow
+↩    right arrow curving left
+↪    left arrow curving right
+⤴    right arrow curving up
+⤵    right arrow curving down
+🔃    clockwise vertical arrows
+🔄    counterclockwise arrows button
+🔙    BACK arrow
+🔚    END arrow
+🔛    ON! arrow
+🔜    SOON arrow
+🔝    TOP arrow
+🛐    place of worship
+⚛    atom symbol
+🕉    om
+✡    star of David
+☸    wheel of dharma
+☯    yin yang
+✝    latin cross
+☦    orthodox cross
+☪    star and crescent
+☮    peace symbol
+🕎    menorah
+🔯    dotted six-pointed star
+♈    Aries
+♉    Taurus
+♊    Gemini
+♋    Cancer
+♌    Leo
+♍    Virgo
+♎    Libra
+♏    Scorpio
+♐    Sagittarius
+♑    Capricorn
+♒    Aquarius
+♓    Pisces
+⛎    Ophiuchus
+🔀    shuffle tracks button
+🔁    repeat button
+🔂    repeat single button
+▶    play button
+⏩    fast-forward button
+⏭    next track button
+⏯    play or pause button
+◀    reverse button
+⏪    fast reverse button
+⏮    last track button
+🔼    upwards button
+⏫    fast up button
+🔽    downwards button
+⏬    fast down button
+⏸    pause button
+⏹    stop button
+⏺    record button
+⏏    eject button
+🎦    cinema
+🔅    dim button
+🔆    bright button
+📶    antenna bars
+📳    vibration mode
+📴    mobile phone off
+♀    female sign
+♂    male sign
+⚕    medical symbol
+♾    ⊛ infinity
+♻    recycling symbol
+⚜    fleur-de-lis
+🔱    trident emblem
+📛    name badge
+🔰    Japanese symbol for beginner
+⭕    hollow red circle
+✅    check mark button
+☑    check box with check
+✔    check mark
+✖    multiplication sign
+❌    cross mark
+❎    cross mark button
+➕    plus sign
+➖    minus sign
+➗    division sign
+➰    curly loop
+➿    double curly loop
+〽    part alternation mark
+✳    eight-spoked asterisk
+✴    eight-pointed star
+❇    sparkle
+‼    double exclamation mark
+⁉    exclamation question mark
+❓    question mark
+❔    white question mark
+❕    white exclamation mark
+❗    exclamation mark
+〰    wavy dash
+©    copyright
+®    registered
+™    trade mark
+#️⃣    keycap: #
+*️⃣    keycap: *
+️⃣    keycap: 0
+️⃣    keycap: 1
+️⃣    keycap: 2
+️⃣    keycap: 3
+️⃣    keycap: 4
+️⃣    keycap: 5
+️⃣    keycap: 6
+️⃣    keycap: 7
+️⃣    keycap: 8
+️⃣    keycap: 9
+🔟    keycap: 10
+🔠    input latin uppercase
+🔡    input latin lowercase
+🔢    input numbers
+🔣    input symbols
+🔤    input latin letters
+🅰    A button (blood type)
+🆎    AB button (blood type)
+🅱    B button (blood type)
+🆑    CL button
+🆒    COOL button
+🆓    FREE button
+ℹ    information
+🆔    ID button
+Ⓜ    circled M
+🆕    NEW button
+🆖    NG button
+🅾    O button (blood type)
+🆗    OK button
+🅿    P button
+🆘    SOS button
+🆙    UP! button
+🆚    VS button
+🈁    Japanese “here” button
+🈂    Japanese “service charge” button
+🈷    Japanese “monthly amount” button
+🈶    Japanese “not free of charge” button
+🈯    Japanese “reserved” button
+🉐    Japanese “bargain” button
+🈹    Japanese “discount” button
+🈚    Japanese “free of charge” button
+🈲    Japanese “prohibited” button
+🉑    Japanese “acceptable” button
+🈸    Japanese “application” button
+🈴    Japanese “passing grade” button
+🈳    Japanese “vacancy” button
+㊗    Japanese “congratulations” button
+㊙    Japanese “secret” button
+🈺    Japanese “open for business” button
+🈵    Japanese “no vacancy” button
+🔴    red circle
+🔵    blue circle
+⚪    white circle
+⚫    black circle
+⬜    white large square
+⬛    black large square
+◼    black medium square
+◻    white medium square
+◽    white medium-small square
+◾    black medium-small square
+▫    white small square
+▪    black small square
+🔶    large orange diamond
+🔷    large blue diamond
+🔸    small orange diamond
+🔹    small blue diamond
+🔺    red triangle pointed up
+🔻    red triangle pointed down
+💠    diamond with a dot
+🔘    radio button
+🔲    black square button
+🔳    white square button
+🏁    chequered flag
+🚩    triangular flag
+🎌    crossed flags
+🏴    black flag
+🏳    white flag
+🏳️‍🌈    rainbow flag
+🏴‍☠️    ⊛ pirate flag
+🇦🇨    flag: Ascension Island
+🇦🇩    flag: Andorra
+🇦🇪    flag: United Arab Emirates
+🇦🇫    flag: Afghanistan
+🇦🇬    flag: Antigua & Barbuda
+🇦🇮    flag: Anguilla
+🇦🇱    flag: Albania
+🇦🇲    flag: Armenia
+🇦🇴    flag: Angola
+🇦🇶    flag: Antarctica
+🇦🇷    flag: Argentina
+🇦🇸    flag: American Samoa
+🇦🇹    flag: Austria
+🇦🇺    flag: Australia
+🇦🇼    flag: Aruba
+🇦🇽    flag: Åland Islands
+🇦🇿    flag: Azerbaijan
+🇧🇦    flag: Bosnia & Herzegovina
+🇧🇧    flag: Barbados
+🇧🇩    flag: Bangladesh
+🇧🇪    flag: Belgium
+🇧🇫    flag: Burkina Faso
+🇧🇬    flag: Bulgaria
+🇧🇭    flag: Bahrain
+🇧🇮    flag: Burundi
+🇧🇯    flag: Benin
+🇧🇱    flag: St. Barthélemy
+🇧🇲    flag: Bermuda
+🇧🇳    flag: Brunei
+🇧🇴    flag: Bolivia
+🇧🇶    flag: Caribbean Netherlands
+🇧🇷    flag: Brazil
+🇧🇸    flag: Bahamas
+🇧🇹    flag: Bhutan
+🇧🇻    flag: Bouvet Island
+🇧🇼    flag: Botswana
+🇧🇾    flag: Belarus
+🇧🇿    flag: Belize
+🇨🇦    flag: Canada
+🇨🇨    flag: Cocos (Keeling) Islands
+🇨🇩    flag: Congo – Kinshasa
+🇨🇫    flag: Central African Republic
+🇨🇬    flag: Congo – Brazzaville
+🇨🇭    flag: Switzerland
+🇨🇮    flag: Côte d’Ivoire
+🇨🇰    flag: Cook Islands
+🇨🇱    flag: Chile
+🇨🇲    flag: Cameroon
+🇨🇳    flag: China
+🇨🇴    flag: Colombia
+🇨🇵    flag: Clipperton Island
+🇨🇷    flag: Costa Rica
+🇨🇺    flag: Cuba
+🇨🇻    flag: Cape Verde
+🇨🇼    flag: Curaçao
+🇨🇽    flag: Christmas Island
+🇨🇾    flag: Cyprus
+🇨🇿    flag: Czechia
+🇩🇪    flag: Germany
+🇩🇬    flag: Diego Garcia
+🇩🇯    flag: Djibouti
+🇩🇰    flag: Denmark
+🇩🇲    flag: Dominica
+🇩🇴    flag: Dominican Republic
+🇩🇿    flag: Algeria
+🇪🇦    flag: Ceuta & Melilla
+🇪🇨    flag: Ecuador
+🇪🇪    flag: Estonia
+🇪🇬    flag: Egypt
+🇪🇭    flag: Western Sahara
+🇪🇷    flag: Eritrea
+🇪🇸    flag: Spain
+🇪🇹    flag: Ethiopia
+🇪🇺    flag: European Union
+🇫🇮    flag: Finland
+🇫🇯    flag: Fiji
+🇫🇰    flag: Falkland Islands
+🇫🇲    flag: Micronesia
+🇫🇴    flag: Faroe Islands
+🇫🇷    flag: France
+🇬🇦    flag: Gabon
+🇬🇧    flag: United Kingdom
+🇬🇩    flag: Grenada
+🇬🇪    flag: Georgia
+🇬🇫    flag: French Guiana
+🇬🇬    flag: Guernsey
+🇬🇭    flag: Ghana
+🇬🇮    flag: Gibraltar
+🇬🇱    flag: Greenland
+🇬🇲    flag: Gambia
+🇬🇳    flag: Guinea
+🇬🇵    flag: Guadeloupe
+🇬🇶    flag: Equatorial Guinea
+🇬🇷    flag: Greece
+🇬🇸    flag: South Georgia & South Sandwich Islands
+🇬🇹    flag: Guatemala
+🇬🇺    flag: Guam
+🇬🇼    flag: Guinea-Bissau
+🇬🇾    flag: Guyana
+🇭🇰    flag: Hong Kong SAR China
+🇭🇲    flag: Heard & McDonald Islands
+🇭🇳    flag: Honduras
+🇭🇷    flag: Croatia
+🇭🇹    flag: Haiti
+🇭🇺    flag: Hungary
+🇮🇨    flag: Canary Islands
+🇮🇩    flag: Indonesia
+🇮🇪    flag: Ireland
+🇮🇱    flag: Israel
+🇮🇲    flag: Isle of Man
+🇮🇳    flag: India
+🇮🇴    flag: British Indian Ocean Territory
+🇮🇶    flag: Iraq
+🇮🇷    flag: Iran
+🇮🇸    flag: Iceland
+🇮🇹    flag: Italy
+🇯🇪    flag: Jersey
+🇯🇲    flag: Jamaica
+🇯🇴    flag: Jordan
+🇯🇵    flag: Japan
+🇰🇪    flag: Kenya
+🇰🇬    flag: Kyrgyzstan
+🇰🇭    flag: Cambodia
+🇰🇮    flag: Kiribati
+🇰🇲    flag: Comoros
+🇰🇳    flag: St. Kitts & Nevis
+🇰🇵    flag: North Korea
+🇰🇷    flag: South Korea
+🇰🇼    flag: Kuwait
+🇰🇾    flag: Cayman Islands
+🇰🇿    flag: Kazakhstan
+🇱🇦    flag: Laos
+🇱🇧    flag: Lebanon
+🇱🇨    flag: St. Lucia
+🇱🇮    flag: Liechtenstein
+🇱🇰    flag: Sri Lanka
+🇱🇷    flag: Liberia
+🇱🇸    flag: Lesotho
+🇱🇹    flag: Lithuania
+🇱🇺    flag: Luxembourg
+🇱🇻    flag: Latvia
+🇱🇾    flag: Libya
+🇲🇦    flag: Morocco
+🇲🇨    flag: Monaco
+🇲🇩    flag: Moldova
+🇲🇪    flag: Montenegro
+🇲🇫    flag: St. Martin
+🇲🇬    flag: Madagascar
+🇲🇭    flag: Marshall Islands
+🇲🇰    flag: Macedonia
+🇲🇱    flag: Mali
+🇲🇲    flag: Myanmar (Burma)
+🇲🇳    flag: Mongolia
+🇲🇴    flag: Macao SAR China
+🇲🇵    flag: Northern Mariana Islands
+🇲🇶    flag: Martinique
+🇲🇷    flag: Mauritania
+🇲🇸    flag: Montserrat
+🇲🇹    flag: Malta
+🇲🇺    flag: Mauritius
+🇲🇻    flag: Maldives
+🇲🇼    flag: Malawi
+🇲🇽    flag: Mexico
+🇲🇾    flag: Malaysia
+🇲🇿    flag: Mozambique
+🇳🇦    flag: Namibia
+🇳🇨    flag: New Caledonia
+🇳🇪    flag: Niger
+🇳🇫    flag: Norfolk Island
+🇳🇬    flag: Nigeria
+🇳🇮    flag: Nicaragua
+🇳🇱    flag: Netherlands
+🇳🇴    flag: Norway
+🇳🇵    flag: Nepal
+🇳🇷    flag: Nauru
+🇳🇺    flag: Niue
+🇳🇿    flag: New Zealand
+🇴🇲    flag: Oman
+🇵🇦    flag: Panama
+🇵🇪    flag: Peru
+🇵🇫    flag: French Polynesia
+🇵🇬    flag: Papua New Guinea
+🇵🇭    flag: Philippines
+🇵🇰    flag: Pakistan
+🇵🇱    flag: Poland
+🇵🇲    flag: St. Pierre & Miquelon
+🇵🇳    flag: Pitcairn Islands
+🇵🇷    flag: Puerto Rico
+🇵🇸    flag: Palestinian Territories
+🇵🇹    flag: Portugal
+🇵🇼    flag: Palau
+🇵🇾    flag: Paraguay
+🇶🇦    flag: Qatar
+🇷🇪    flag: Réunion
+🇷🇴    flag: Romania
+🇷🇸    flag: Serbia
+🇷🇺    flag: Russia
+🇷🇼    flag: Rwanda
+🇸🇦    flag: Saudi Arabia
+🇸🇧    flag: Solomon Islands
+🇸🇨    flag: Seychelles
+🇸🇩    flag: Sudan
+🇸🇪    flag: Sweden
+🇸🇬    flag: Singapore
+🇸🇭    flag: St. Helena
+🇸🇮    flag: Slovenia
+🇸🇯    flag: Svalbard & Jan Mayen
+🇸🇰    flag: Slovakia
+🇸🇱    flag: Sierra Leone
+🇸🇲    flag: San Marino
+🇸🇳    flag: Senegal
+🇸🇴    flag: Somalia
+🇸🇷    flag: Suriname
+🇸🇸    flag: South Sudan
+🇸🇹    flag: São Tomé & Príncipe
+🇸🇻    flag: El Salvador
+🇸🇽    flag: Sint Maarten
+🇸🇾    flag: Syria
+🇸🇿    flag: Eswatini
+🇹🇦    flag: Tristan da Cunha
+🇹🇨    flag: Turks & Caicos Islands
+🇹🇩    flag: Chad
+🇹🇫    flag: French Southern Territories
+🇹🇬    flag: Togo
+🇹🇭    flag: Thailand
+🇹🇯    flag: Tajikistan
+🇹🇰    flag: Tokelau
+🇹🇱    flag: Timor-Leste
+🇹🇲    flag: Turkmenistan
+🇹🇳    flag: Tunisia
+🇹🇴    flag: Tonga
+🇹🇷    flag: Turkey
+🇹🇹    flag: Trinidad & Tobago
+🇹🇻    flag: Tuvalu
+🇹🇼    flag: Taiwan
+🇹🇿    flag: Tanzania
+🇺🇦    flag: Ukraine
+🇺🇬    flag: Uganda
+🇺🇲    flag: U.S. Outlying Islands
+🇺🇳    flag: United Nations
+🇺🇸    flag: United States
+🇺🇾    flag: Uruguay
+🇺🇿    flag: Uzbekistan
+🇻🇦    flag: Vatican City
+🇻🇨    flag: St. Vincent & Grenadines
+🇻🇪    flag: Venezuela
+🇻🇬    flag: British Virgin Islands
+🇻🇮    flag: U.S. Virgin Islands
+🇻🇳    flag: Vietnam
+🇻🇺    flag: Vanuatu
+🇼🇫    flag: Wallis & Futuna
+🇼🇸    flag: Samoa
+🇽🇰    flag: Kosovo
+🇾🇪    flag: Yemen
+🇾🇹    flag: Mayotte
+🇿🇦    flag: South Africa
+🇿🇲    flag: Zambia
+🇿🇼    flag: Zimbabwe
+🏴󠁧󠁢󠁥󠁮󠁧󠁿    flag: England
+🏴󠁧󠁢󠁳󠁣󠁴󠁿    flag: Scotland
+🏴󠁧󠁢󠁷󠁬󠁳󠁿    flag: Wales
