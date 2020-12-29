@@ -1,12 +1,14 @@
 #!/bin/bash
 
+BROUTEUR="/home/kheops/apps/tor-browser_en-US/Browser/start-tor-browser --detach --allow-remote"
+
 q=$(zenity --entry --text=🔍)
 
 if [ $? != 0 ]; then
   exit
 fi
 
-echo "$q" | python3 -c '
+url=$(echo "$q" | python3 -c '
 import requests
 from bs4 import BeautifulSoup
 from sys import stdin
@@ -21,5 +23,8 @@ page = requests.get("https://duckduckgo.com/html/?%s" % urlencode({"q": q}), hea
 soup = BeautifulSoup(page, "html.parser").find_all("a", class_="result__url", href=True)
 for link in soup:
     print(link["href"])' \
- | dmenu -l 5 -c -fn "Monospace-13" \
- | xclip -in -selection clipboard
+ | dmenu -l 5 -c -fn "Monospace-13")
+
+if [ -n "$url" ]; then
+  $BROUTEUR "$url"
+fi
