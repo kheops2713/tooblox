@@ -28,10 +28,10 @@ case "$1" in
     done
     ;;
   wp)
-    lang=$(echo $WPLANGS | tr ' ' '\n' | $DMENU -p 🌐)
-    if [ -z "$lang" ]; then exit; fi
     wpterm=$(sort -u $WPCACHE | $DMENU -p 📚)
     if [ -z "$wpterm" ]; then exit; fi
+    lang=$(echo $WPLANGS | tr ' ' '\n' | $DMENU -p 🌐)
+    if [ -z "$lang" ]; then exit; fi
     grep -qxF "$wpterm" $WPCACHE || echo "$wpterm" >>$WPCACHE
     broute "https://${lang}.wikipedia.org/wiki/Special:Search/${wpterm}"
     ;;
