@@ -311,9 +311,19 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-emoji.sh</command>
     </action>
   </keybind>
-  <keybind key="W-c">
+  <keybind key="W-b">
     <action name="Execute">
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh</command>
+    </action>
+  </keybind>
+  <keybind key="W-h">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh histclean</command>
+    </action>
+  </keybind>
+  <keybind key="W-d">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh wp</command>
     </action>
   </keybind>
   <keybind key="W-l">
