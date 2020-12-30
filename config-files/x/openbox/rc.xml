@@ -308,6 +308,11 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-emoji.sh</command>
     </action>
   </keybind>
+  <keybind key="W-k">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-kaomoji.sh</command>
+    </action>
+  </keybind>
   <keybind key="W-b">
     <action name="Execute">
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh</command>
