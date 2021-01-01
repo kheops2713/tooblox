@@ -328,6 +328,11 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh wp</command>
     </action>
   </keybind>
+  <keybind key="W-o">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/xorg-utils/clipboard_url_terminal.sh</command>
+    </action>
+  </keybind>
   <keybind key="W-l">
     <action name="Execute">
       <command>/usr/bin/slock</command>
