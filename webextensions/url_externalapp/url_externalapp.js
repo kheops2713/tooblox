@@ -10,7 +10,7 @@ browser.menus.create({
 browser.menus.onClicked.addListener((info, tab) => {
   switch (info.menuItemId) {
     case "termlink":
-    var extapp = browser.runtime.connectNative("url_externalapp");
+    var extapp = browser.runtime.connectNative("url_from_firefox_in_terminal");
     extapp.postMessage (info["linkUrl"]);
     extapp.disconnect()
     break;
