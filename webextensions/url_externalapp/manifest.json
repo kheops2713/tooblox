@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "url_externalapp",
+  "version": "0.1.0",
+  "default_locale": "fr",
+ 
+  "description": "Opens a URL with an external programme",
+
+  "icons": {
+    "48": "icones/icone.svg",
+    "96": "icones/icone.svg"
+  },
+
+  "permissions": ["menus", "nativeMessaging"],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "url_externalapp@ceops.eu"
+    }
+  },
+
+  "background": {
+    "scripts": ["url_externalapp.js"]
+  }
+}
