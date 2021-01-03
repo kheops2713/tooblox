@@ -1,0 +1,7 @@
+{
+  "name": "url_from_firefox_in_terminal",
+  "description": "zarmacul",
+  "type": "stdio",
+  "path": "/home/kheops/.local/bin/url_from_firefox_in_terminal.sh",
+  "allowed_extensions": ["url_externalapp@ceops.eu"]
+}
