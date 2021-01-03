@@ -13,4 +13,4 @@ xdotool search --onlyvisible xfce4-terminal windowactivate && \
   sleep 0.2 && \
   xdotool key Ctrl+Shift+t && \
   sleep 0.2 && \
-  xdotool type --delay 15 "$CMD $u"
+  xdotool type --delay 15 "$CMD $t"
