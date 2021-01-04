@@ -323,6 +323,16 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh wp</command>
     </action>
   </keybind>
+  <keybind key="W-u">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-url-term.sh</command>
+    </action>
+  </keybind>
+  <keybind key="W-r">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-url-term.sh histclean</command>
+    </action>
+  </keybind>
   <keybind key="W-o">
     <action name="Execute">
       <command>/home/kheops/bidouille/toolbox/scripts/xorg-utils/clipboard_url_terminal.sh</command>
