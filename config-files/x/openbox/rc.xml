@@ -298,11 +298,6 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-bind.sh</command>
     </action>
   </keybind>
-  <keybind key="W-t">
-    <action name="Execute">
-      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-bind.sh torify</command>
-    </action>
-  </keybind>
   <keybind key="W-e">
     <action name="Execute">
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-emoji.sh</command>
