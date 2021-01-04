@@ -35,12 +35,14 @@ urlls(){
 }
 
 urlrm(){
+  local OPTS=""
+  if [ "$1" == "-f" ]; then OPTS="-f"; shift; fi
   while [ ${#@} -ne 0 ]; do
     local URL="$1"
     if [ -n "$URL" ]; then
       local fname=$(echo -n "$URL" | urlencode)
       local URLFILE="${URL_CACHE_DIR}/$fname"
-      rm "$URLFILE"
+      rm $OPTS "$URLFILE"
     fi
   shift
   done
