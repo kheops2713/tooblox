@@ -360,10 +360,20 @@
   </keybind>
   <keybind key="XF86MonBrightnessUp">
     <action name="Execute">
-      <command>/usr/bin/light -A 1</command>
+      <command>/usr/bin/light -A 0.1</command>
     </action>
   </keybind>
   <keybind key="XF86MonBrightnessDown">
+    <action name="Execute">
+      <command>/usr/bin/light -U 0.1</command>
+    </action>
+  </keybind>
+  <keybind key="S-XF86MonBrightnessUp">
+    <action name="Execute">
+      <command>/usr/bin/light -A 1</command>
+    </action>
+  </keybind>
+  <keybind key="S-XF86MonBrightnessDown">
     <action name="Execute">
       <command>/usr/bin/light -U 1</command>
     </action>
