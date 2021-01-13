@@ -360,12 +360,12 @@
   </keybind>
   <keybind key="XF86MonBrightnessUp">
     <action name="Execute">
-      <command>/usr/bin/xbacklight -inc 5 -time 0 -steps 1</command>
+      <command>/usr/bin/light -A 1</command>
     </action>
   </keybind>
   <keybind key="XF86MonBrightnessDown">
     <action name="Execute">
-      <command>/usr/bin/xbacklight -dec 5 -time 0 -steps 1</command>
+      <command>/usr/bin/light -U 1</command>
     </action>
   </keybind>
   <keybind key="XF86AudioRaiseVolume">
