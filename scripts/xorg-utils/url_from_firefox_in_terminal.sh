@@ -9,7 +9,7 @@ CMD="url"
 # https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Native_messaging#App_side)
 t=$(cat | dd bs=1 skip=4 | tr -d '"')
 
-xdotool search --onlyvisible xfce4-terminal windowactivate && \
+xdotool search --onlyvisible "Terminal - " windowactivate && \
   sleep 0.2 && \
   xdotool key Ctrl+Shift+t && \
   sleep 0.2 && \
