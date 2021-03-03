@@ -1,6 +1,3 @@
-# Example muttrc for two accounts + PGP management with separate identity for each account
-# Mostly stolen from bits everywhere on the web, with some customization
-
 set charset="utf-8"
 set sort="threads"
 set sort_aux="last-date-received"
@@ -10,41 +7,27 @@ set use_envelope_from=yes
 set ssl_force_tls=yes
 set ssl_use_sslv3=no
 set certificate_file=~/.mutt/certificates
-set index_format="%4C %Z %{%b %d %Y} %-15.15L (%4l) %s %> %M"
+set index_format="%[%d/%m/%y] %Z %-15.15L (%4l) %s %> %M"
 set collapse_unread=no
 set strict_threads=yes
 
-# Note: you need to create the directory by hand for this to work.
-# Mutt will create different subdirs for each account, so we just need to set these generally.
 set header_cache = ~/.cache/mutt
 set message_cachedir = ~/.cache/mutt
 
-# Tell mutt where the mailcap is, and to automatically start the helper app for text/html.
 set mailcap_path = ~/.mutt/mailcap
-auto_view text/html
-
-# still give priority to plaintext over html in case both contents are present
+auto_view text/html text/calendar
 alternative_order text/plain text/html
-
-folder-hook . 'push <collapse-all>'
-folder-hook 'server1.com' 'source ~/.mutt/account1'
-folder-hook 'server2.org' 'source ~/.mutt/account2'
 
 source ~/.mutt/pgp-common
 
-macro index <f4> '<sync-mailbox>'
-macro index <f2> '<enter-command>source ~/.mutt/account1<enter><change-folder>!<enter>'
-macro index <f3> '<enter-command>source ~/.mutt/account2<enter><change-folder>!<enter>'
-# -*-muttrc-*-
+# Script generating F-commands to switch accounts based on *.muttrc in
+# ~/.mutt/accounts-rc/
+source ~/.mutt/gen-muttrc-accounts-macros.sh|
+macro index <F5> '<sync-mailbox>'
+folder-hook . 'push <collapse-all>'
+unset imap_list_subscribed
 
-# Use our customized version of the "solarized" mutt palette
-# Pulled from https://github.com/altercation/mutt-colors-solarized/ and modified
-# Note: it seems mutt must be compiled with slang rather than ncurses for this to work
-
-source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
-source ~/.mutt/strings-fr
-
-# Sidebar settings
+# Sidebar stuff
 set imap_check_subscribed
 set sidebar_visible = yes
 set sidebar_short_path = yes
@@ -56,29 +39,11 @@ set mail_check_stats
 set sidebar_format = '%B%?F? [%F]?%* %?N?%N?'
 set sidebar_sort_method = new
 
-# Abook: simple address book software that interacts with mutt (quite
-# unmaintained but still useful and simple)
+# Abook
 set query_command= "abook --mutt-query '%s'"
 macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this sender to Abook"
 bind editor        <Tab> complete-query
 
-
-# Palette for use with the Linux console.  Black background.
-#color hdrdefault blue black
-#color quoted green black
-#color signature blue black
-#color attachment red black
-#color message brightred black
-#color error brightred black
-#color indicator black red
-#color status brightgreen blue
-#color tree white black
-#color normal white black
-#color markers red black
-#color search white black
-#color tilde brightmagenta black
-#color index blue black ~F
-#color index red black "~N|~O"
-
-# color body brightwhite black '\*+[^*]+\*+'
-# color body brightwhite black '_+[^_]+_+'
+# Colours and strings
+source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/strings-fr
