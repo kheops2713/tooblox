@@ -1,5 +1,5 @@
 set forward_attribution_intro="----- Message transféré de %f -----"
 set forward_attribution_trailer="----- Fin du message transféré -----"
 set forward_format="Tr. : %s"
-set attribution="De %n, le %{%d/%m/%Y à %Hh%M (%z)} :"
+set attribution="%n, le %{%d/%m/%Y à %Hh%M (%z)} :"
 set attribution_locale="fr_FR.UTF-8 UTF-8"
