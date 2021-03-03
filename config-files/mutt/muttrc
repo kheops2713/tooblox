@@ -27,6 +27,9 @@ macro index <F5> '<sync-mailbox>'
 folder-hook . 'push <collapse-all>'
 unset imap_list_subscribed
 
+set status_chars = " *%A"
+set status_format = "%r %D : %M courriers (%?u?%u non lus?%?d?, %d suppr.?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?) %> %l (%P) | $my_fshortcuts"
+
 # Sidebar stuff
 set imap_check_subscribed
 set sidebar_visible = yes
