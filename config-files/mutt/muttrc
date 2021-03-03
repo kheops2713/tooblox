@@ -18,7 +18,7 @@ set mailcap_path = ~/.mutt/mailcap
 auto_view text/html text/calendar
 alternative_order text/plain text/html
 
-source ~/.mutt/pgp-common
+source ~/.mutt/pgp-common.muttrc
 
 # Script generating F-commands to switch accounts based on *.muttrc in
 # ~/.mutt/accounts-rc/
@@ -46,4 +46,4 @@ bind editor        <Tab> complete-query
 
 # Colours and strings
 source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
-source ~/.mutt/strings-fr
+source ~/.mutt/strings-fr.muttrc
