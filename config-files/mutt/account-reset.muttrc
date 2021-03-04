@@ -1,2 +1,2 @@
-reset folder spoolfile smtp_url hostname from realname record pgp_sign_as pgp_default_key
+unset folder spoolfile smtp_url hostname from realname record pgp_sign_as pgp_default_key
 unmailboxes *
