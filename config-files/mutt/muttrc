@@ -1,5 +1,5 @@
-unset folder
-unset spoolfile
+source ~/.mutt/account-reset.muttrc
+
 set charset="utf-8"
 set sort="threads"
 set sort_aux="last-date-received"
