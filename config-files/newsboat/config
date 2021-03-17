@@ -1,0 +1,3 @@
+proxy-type socks5h
+proxy localhost:9050
+keep-articles-days 5
