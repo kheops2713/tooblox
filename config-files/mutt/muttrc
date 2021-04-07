@@ -25,7 +25,6 @@ source ~/.mutt/pgp-common.muttrc
 # Script generating F-commands to switch accounts based on *.muttrc in
 # ~/.mutt/accounts-rc/
 source ~/.mutt/gen-muttrc-accounts-macros.sh|
-macro index <F5> '<sync-mailbox>'
 folder-hook . 'push <collapse-all>'
 unset imap_list_subscribed
 
