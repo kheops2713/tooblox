@@ -2,12 +2,12 @@
 
 MUTTRC_ACCOUNTS_FILES=~/.mutt/accounts-rc/*.muttrc
 
-BASE_IDX=6
+BASE_IDX=2
 
 idx=$BASE_IDX
 fshortcuts=""
 for rcfile in $MUTTRC_ACCOUNTS_FILES; do
-  echo "macro index <F${idx}> '<enter-command>source $rcfile<enter><change-folder>!<enter>'"
+  echo "macro index <F${idx}> '<enter-command>source ~/.mutt/account-reset.muttrc<enter><enter-command>source $rcfile<enter><change-folder>!<enter>'"
   fshortcuts="${fshortcuts}F${idx}:$(basename $rcfile .muttrc) "
   idx=$(($idx+1))
 done
