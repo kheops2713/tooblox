@@ -1,7 +1,10 @@
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
+#text/html; html2text - %{charset}; copiousoutput;
+text/x-markdown; vim -R %s; edit=vim %s;
 application/pdf; evince %s;
-image/*; sxiv %s; edit=gimp %s;
+image/*; sxiv -a %s; edit=gimp %s;
 application/ms-tnef; tnef -w %s;
 text/calendar; vcal -all %s; copiousoutput;
 audio/*; mpv %s;
 video/*; mpv %s;
+application/x-zip-compressed; unzip -l %s; copiousoutput;
