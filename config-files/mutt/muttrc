@@ -49,5 +49,5 @@ macro index,pager  a "<pipe-message>abook --add-email-quiet<return>" "Add this s
 bind editor        <Tab> complete-query
 
 # Colours and strings
-source ~/.mutt/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/mutt-colors-solarized-dark-256.muttrc
 source ~/.mutt/strings-fr.muttrc
