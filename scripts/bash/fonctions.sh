@@ -20,7 +20,9 @@ url() {
   if [ -n "$URL" ]; then
     local fname=$(echo -n "$URL" | urlencode)
     local URLFILE="${URL_CACHE_DIR}/$fname"
-    (zcat "$URLFILE" 2>/dev/null | sed "s/^/$prefix/" | less) || \
+    if [ -f "$URLFILE" ]; then
+      zcat "$URLFILE" 2>/dev/null | sed "s/^/$prefix/" | less
+    else
       curl "$URL" | \
       w3m -T text/html -cols $dumpcols -dump | \
       gzip -c | \
@@ -28,6 +30,7 @@ url() {
       gunzip -c | \
       sed "s/^/$prefix/" | \
       less
+    fi
   fi
 }
 
