@@ -9,16 +9,24 @@ IMGS_URL=https://imgs.be
 # cache local rudimentaire…
 url() {
   local URL="$1"
+  local termcols=$(tput cols)
+  local dumpcols=80
+  if [ $dumpcols -gt $termcols ]; then
+    dumpcols=$termcols
+  fi
+  local offset=$((($termcols - $dumpcols)/2))
+  local prefix=$(printf %${offset}c ' ')
 
   if [ -n "$URL" ]; then
     local fname=$(echo -n "$URL" | urlencode)
     local URLFILE="${URL_CACHE_DIR}/$fname"
-    zless "$URLFILE" 2>/dev/null || \
+    (zcat "$URLFILE" 2>/dev/null | sed "s/^/$prefix/" | less) || \
       curl "$URL" | \
-      w3m -T text/html -dump | \
+      w3m -T text/html -cols $dumpcols -dump | \
       gzip -c | \
       tee "$URLFILE" | \
       gunzip -c | \
+      sed "s/^/$prefix/" | \
       less
   fi
 }
