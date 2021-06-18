@@ -8,10 +8,12 @@ DNSPort 127.0.0.1:9053
 DNSPort [::1]:9053
 TransPort 9052
 TransPort [::1]:9052
-ControlPort 9051
-ControlPort [::1]:9051
 
 HashedControlPassword 16:59E361D12342D293603F5D76718832FFB09569BF3AE5480C46C8C5D5E4
+
+ControlSocket /var/lib/tor/control_socket
+ControlSocketsGroupWritable 1
+DataDirectoryGroupReadable 1
 
 AutomapHostsOnResolve 1
 AutomapHostsSuffixes .onion
