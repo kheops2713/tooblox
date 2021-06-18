@@ -1,19 +1,26 @@
-# Local SOCKS proxy
-SocksPort 9050 IPv6Traffic PreferIPv6
+User tor
+DataDirectory /var/lib/tor
 
-# Local DNS server that resolves requests inside Tor
+SocksPort 127.0.0.1:9050 IPv6Traffic PreferIPv6
+SocksPort [::1]:9050 IPv6Traffic PreferIPv6
+
 DNSPort 127.0.0.1:9053
 DNSPort [::1]:9053
+TransPort 9052
+TransPort [::1]:9052
+ControlPort 9051
+ControlPort [::1]:9051
 
-# Use IPv6 (tor >= 0.2.4.19)
-ClientUseIPv6 1
+HashedControlPassword 16:59E361D12342D293603F5D76718832FFB09569BF3AE5480C46C8C5D5E4
 
-# To have automatic mapping of .onion addresses
 AutomapHostsOnResolve 1
 AutomapHostsSuffixes .onion
+VirtualAddrNetworkIPv6 [FC00::]/7
+ClientUseIPv6 1
 
-# Local listen port for transparent proxying through Tor
-TransPort 9040
+# Because systemd
+RunAsDaemon 0
 
-RunAsDaemon 1
-PidFile /home/kheops/.tor/tor.pid
+# Set to 1 and add bridges if necessary
+UseBridges 0
+
