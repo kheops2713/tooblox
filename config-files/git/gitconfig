@@ -17,4 +17,4 @@
 [merge]
 	tool = vimdiff
 [pull]
-	rebase = false
+	rebase = true
