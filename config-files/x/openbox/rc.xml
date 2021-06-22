@@ -353,6 +353,11 @@
       <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-nmcli-wifi.sh</command>
     </action>
   </keybind>
+  <keybind key="XF86Display">
+    <action name="Execute">
+      <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-autorandr.sh</command>
+    </action>
+  </keybind>
   <keybind key="W-p">
     <action name="Execute">
       <command>/home/kheops/bidouille/toolbox/scripts/system/shutdown.sh</command>
