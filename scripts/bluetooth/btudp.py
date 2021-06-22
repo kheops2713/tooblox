@@ -18,9 +18,13 @@ anim_char = "🚲"
 anim_cnt = 0
 anim_width = 15
 
+print ("Want: {}".format(bt_mac))
+
 while True:
   nearby_devices = bluetooth.discover_devices()
+  print (nearby_devices)
   if bt_mac in nearby_devices:
+    print ("Found")
     break
 
 btsock = bluetooth.BluetoothSocket (bluetooth.RFCOMM)
