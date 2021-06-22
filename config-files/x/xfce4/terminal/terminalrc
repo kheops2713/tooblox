@@ -37,6 +37,6 @@ MiscShowUnsafePasteDialog=TRUE
 ScrollingLines=10000
 ScrollingOnOutput=FALSE
 TabActivityColor=#000000000000
-FontName=Inconsolata 14
+FontName=Inconsolata Semi-Bold 14
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
 
