@@ -70,7 +70,7 @@ dl() {
     elif [ -d "$O" ]; then
       O="${O}/$(echo "$URL" | sed 's_.*/__' | sed 's/^$/index.html/')"
     fi
-    curl -o "$O" "$URL"
+    curl -L -o "$O" "$URL"
   fi
 }
 
