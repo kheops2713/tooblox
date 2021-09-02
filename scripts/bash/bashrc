@@ -32,6 +32,7 @@ alias ggrep='grep --exclude-dir=.git'
 alias tb="cd ~/apps/tor-browser_en-US && ./start-tor-browser.desktop && cd -"
 alias ev='calcurse -d 2 --filter-start-to "tomorrow $(date +"%H:%M")" --filter-end-from "today $(date +%H:%M)"'
 alias v=vim
+alias nyx='nyx -s /var/lib/tor/control_socket'
 
 source /usr/share/git/completion/git-prompt.sh
 source ~/bidouille/scripts/fonctions.sh
