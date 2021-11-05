@@ -24,18 +24,19 @@
 ## <CONFIG> ##
 
 AP_IF=wlp3s0
-SSID="foodbeat"
+SSID="ZADzad"
 CHANNEL=1
 MAC=
-PSK='uph3Baeriemo'
+PSK='KarlMarx81'
 
 SUBNET=192.168.88.0
 NETMASK_BITS=24
+DNS=1.2.3.4
 
 # Try tell clients to use the NS that we use in /etc/resolv.conf
 # Note: many modern distros don't use /etc/resolv.conf anymore so it may fail 
-DNS=$(egrep ^nameserver /etc/resolv.conf | head -n 1 | awk {'print $2'})
-#DNS=10.1.0.1
+#DNS=$(egrep ^nameserver /etc/resolv.conf | head -n 1 | awk {'print $2'})
+DNS=10.1.0.1
 
 ## </CONFIG> ##
 

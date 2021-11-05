@@ -1,9 +1,8 @@
 [Configuration]
-BackgroundImageFile=/home/kheops/indotheque/meteor/fondvitage.jpg
-BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_SCALED
-BackgroundDarkness=0,580000
+BackgroundImageFile=/home/kheops/photos/2021-07-14 Summer vélo trip : Cognac — Saint-Sulpice-en-Mareuil/20210714_134147.jpg
+BackgroundDarkness=0,920000
 ColorForeground=White
-ColorBackground=Black
+ColorBackground=#000000000000
 ColorCursor=Green
 ColorSelection=White
 CommandLoginShell=TRUE
@@ -39,4 +38,7 @@ ScrollingOnOutput=FALSE
 TabActivityColor=#000000000000
 FontName=Inconsolata Semi-Bold 14
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
+BackgroundMode=TERMINAL_BACKGROUND_IMAGE
+BackgroundImageStyle=TERMINAL_BACKGROUND_STYLE_STRETCHED
+BackgroundImageShading=0,650000
 
