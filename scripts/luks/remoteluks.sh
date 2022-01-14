@@ -8,4 +8,4 @@ if [ -z "$REMOTEHOST" ]; then
 fi
 
 read -r -p "Passphrase: " -s pw
-echo -n "$pw" | ssh -o UserKnownHostsFile=~/.ssh/known_hosts.initramfs "root@$1"
+echo -n "$pw" | ssh -o UserKnownHostsFile=~/.ssh/known_hosts.initramfs -o HostKeyAlgorithms=+ssh-rsa -o PubkeyAcceptedKeyTypes=+ssh-rsa "root@$1"
