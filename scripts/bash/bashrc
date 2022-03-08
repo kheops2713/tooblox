@@ -97,7 +97,7 @@ __calcurse_event_check() {
 
 SSH_INFOS='$(__ssh_agent_test)'
 
-PS1="$GREY($L_GREEN\u$GREY@$CYAN\h$GREY)" # (user@host:123) user, host, command number
+PS1="$GREY($YELLOW\u$GREY@$L_CYAN\h$GREY)" # (user@host:123) user, host, command number
 PS1="${PS1}($CYAN\A"'$(__calcurse_event_check)'"$GREY)" # (23:59) date HH:MM
 PS1="${PS1}($CYAN\j$GREY)" # (0) jobs
 PS1="${PS1}($CYAN\w$GREY)" # (~/current/directory)
