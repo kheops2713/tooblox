@@ -6,11 +6,13 @@
 	editor = vim
 	precomposeunicode = true
 	quotePath = false
+	zbl = pzre
 [alias]
 	scommit = commit -s -S
 	stag = tag -s
+	rv = remote -v
 [http]
-	sslVerify = false
+	sslVerify = true
 	proxy = socks5h://127.0.0.1:9050
 [https]
 	proxy = socks5h://127.0.0.1:9050
@@ -18,3 +20,5 @@
 	tool = vimdiff
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
