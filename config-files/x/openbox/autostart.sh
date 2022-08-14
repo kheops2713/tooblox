@@ -13,3 +13,4 @@ syndaemon -R -t -i 0.7 -k -d
 synclient TapButton1=1 TapButton2=2 TapButton3=3
 xfce4-terminal --maximize &
 xcompmgr -c &
+dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
