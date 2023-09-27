@@ -3,3 +3,4 @@ syntax on
 set tw=80
 set autoindent
 set number
+colorscheme desert
