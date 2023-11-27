@@ -4,11 +4,9 @@
 # you can do something like: 
 #ProxyCommand ssh -o 'ProxyCommand /usr/bin/nc -X 5 -x localhost:9050 %%h %%p' -q -W %h:%p brains.deflect.ca
 
-Host !192.168.* !10.* !172.16.* !fe80::* *
+Host !192.168.* !10.* !172.16.* !fe80::* !fc* !fd* !localhost *
 CheckHostIP no
 Compression yes
 Protocol 2
 ProxyCommand /usr/bin/nc -X 5 -x localhost:9050 %h %p
 UseRoaming no
-
-
