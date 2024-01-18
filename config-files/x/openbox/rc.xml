@@ -367,7 +367,7 @@
     </keybind>
     <keybind key="W-t">
       <action name="Execute">
-        <command>/bin/sh -c '(date +"%A %d %B"; date +%H:%M)|osd_cat -p middle -A center -l 2 -c green -f "-*-dejavu sans-*-r-*-*-50-*-*-*-*-*-*-*" -d 2'</command>
+        <command>/bin/sh -c '(date +"%A %d %B"; date +%H:%M)|osd_cat -p middle -A center -l 2 -c orange -f "-*-dejavu sans-*-r-*-*-50-*-*-*-*-*-*-*" -d 2'</command>
       </action>
     </keybind>
     <keybind key="W-w">
