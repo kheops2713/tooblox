@@ -8,3 +8,4 @@ text/calendar; vcal -all %s; copiousoutput;
 audio/*; mpv %s;
 video/*; mpv %s;
 application/x-zip-compressed; unzip -l %s; copiousoutput;
+application/vnd.oasis.opendocument.text; lowriter --view %s;
