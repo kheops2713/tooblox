@@ -5,7 +5,16 @@ if [ -z "$PGP_ID" ]; then
   exit 1
 fi
 
-THRESHOLD=$((48*3600)) # 48 hours
+convertsecs2dhms () {
+    local d=$((${1}/(60*60*24)))
+    local h=$(((${1}%(60*60*24))/(60*60)))
+    local m=$(((${1}%(60*60))/60))
+    local s=$((${1}%60))
+    printf -v printValue "%02d days %02d hours %02d minutes %02d seconds \n" $d $h $m $s
+    echo "$printValue"
+}
+
+THRESHOLD=${PGP_EXPIRE_THRESHOLD:-$((48*3600))} # 48 hours by default
 
 now=$(date +%s)
 
@@ -20,7 +29,7 @@ while read subkeyline; do
   validuses="${validuses}${sk_use}"
   timeleft=$(($sk_exp-$now))
   if [ $timeleft -lt $THRESHOLD ]; then
-    echo Subkey "$sk_ID" \(use \""$sk_use"\"\) expires in $timeleft seconds
+    echo Subkey "$sk_ID" \(use \""$sk_use"\"\) expires in $(convertsecs2dhms $timeleft)
   fi
 done 
 

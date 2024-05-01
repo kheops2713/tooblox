@@ -107,7 +107,7 @@ PS1="${PS1}$SSH_INFOS"
 PS1="${PS1}$RED$GIT_INFOS\n" # (master *+%) git infos
 PS1="${PS1}$WHITE\$$NC " # ($) prompt character
 
-PGP_ID=0xBA5B6E9F53BB2174 ~/bidouille/toolbox/scripts/gnupg/check_subkeys_expiration.sh
+PGP_EXPIRE_THRESHOLD=$((24*3600*14)) PGP_ID=0xBA5B6E9F53BB2174 ~/bidouille/toolbox/scripts/gnupg/check_subkeys_expiration.sh
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
