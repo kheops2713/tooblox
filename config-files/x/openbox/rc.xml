@@ -310,29 +310,9 @@
       </action>
     </keybind>
     <!-- Keybindings for running applications -->
-    <keybind key="W-x">
-      <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-bind.sh</command>
-      </action>
-    </keybind>
-    <keybind key="W-e">
-      <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-emoji.sh</command>
-      </action>
-    </keybind>
-    <keybind key="W-k">
-      <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-kaomoji.sh</command>
-      </action>
-    </keybind>
     <keybind key="W-b">
       <action name="Execute">
         <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh</command>
-      </action>
-    </keybind>
-    <keybind key="W-h">
-      <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh histclean</command>
       </action>
     </keybind>
     <keybind key="W-d">
@@ -340,24 +320,19 @@
         <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh wp</command>
       </action>
     </keybind>
-    <keybind key="W-u">
+    <keybind key="W-e">
       <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-url-term.sh</command>
+        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-emoji.sh</command>
       </action>
     </keybind>
-    <keybind key="W-r">
+    <keybind key="W-h">
       <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-url-term.sh histclean</command>
+        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-ddg.sh histclean</command>
       </action>
     </keybind>
-    <keybind key="W-o">
+    <keybind key="W-k">
       <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/xorg-utils/clipboard_url_terminal.sh</command>
-      </action>
-    </keybind>
-    <keybind key="W-v">
-      <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/xorg-utils/clipboard_url_browser.sh</command>
+        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-kaomoji.sh</command>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -365,9 +340,39 @@
         <command>/usr/bin/slock</command>
       </action>
     </keybind>
+    <keybind key="W-m">
+      <action name="Execute">
+        <command>xdotool key Enter</command>
+      </action>
+    </keybind>
+    <keybind key="W-o">
+      <action name="Execute">
+        <command>/home/kheops/bidouille/toolbox/scripts/xorg-utils/clipboard_url_terminal.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+        <command>/home/kheops/bidouille/toolbox/scripts/system/shutdown.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-r">
+      <action name="Execute">
+        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-url-term.sh histclean</command>
+      </action>
+    </keybind>
     <keybind key="W-t">
       <action name="Execute">
         <command>/bin/sh -c '(date +"%A %d %B"; date +%H:%M)|osd_cat -p middle -A center -l 2 -c orange -f "-*-dejavu sans-*-r-*-*-50-*-*-*-*-*-*-*" -d 2'</command>
+      </action>
+    </keybind>
+    <keybind key="W-u">
+      <action name="Execute">
+        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-url-term.sh</command>
+      </action>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute">
+        <command>/home/kheops/bidouille/toolbox/scripts/xorg-utils/clipboard_url_browser.sh</command>
       </action>
     </keybind>
     <keybind key="W-w">
@@ -375,14 +380,14 @@
         <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-nmcli-wifi.sh</command>
       </action>
     </keybind>
+    <keybind key="W-x">
+      <action name="Execute">
+        <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-bind.sh</command>
+      </action>
+    </keybind>
     <keybind key="XF86Display">
       <action name="Execute">
         <command>/home/kheops/bidouille/toolbox/scripts/dmenu/dmenu-autorandr.sh</command>
-      </action>
-    </keybind>
-    <keybind key="W-p">
-      <action name="Execute">
-        <command>/home/kheops/bidouille/toolbox/scripts/system/shutdown.sh</command>
       </action>
     </keybind>
     <keybind key="XF86MonBrightnessUp">
