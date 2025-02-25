@@ -24,4 +24,4 @@ notification.notifyall=flagged-only
 notification.warning=300
 appearance.todoview=show-completed
 appearance.headingpos=right-justified
-format.dayheading=%B %-d, %Y
+format.dayheading=%A %d %B %Y
