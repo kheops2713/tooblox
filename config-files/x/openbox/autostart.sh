@@ -11,7 +11,7 @@ xautolock -locker /usr/bin/slock -time 3 &
 /usr/bin/dunst &
 syndaemon -R -t -i 0.7 -k -d
 synclient TapButton1=1 TapButton2=2 TapButton3=3
-xfce4-terminal --maximize &
+kitty --start-as maximized &
 xcompmgr -c &
 inputplug -c ~/.config/openbox/kbdplug.sh
 dbus-update-activation-environment --systemd DBUS_SESSION_BUS_ADDRESS DISPLAY XAUTHORITY
